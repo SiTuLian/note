@@ -1,0 +1,55 @@
+
+public class Class04 {
+
+	/**
+	 * Arrays类
+	 */
+	public static void main(String[] args) {
+		int[] list = {2,3,6,8,43,23,76,34,22,74};
+		java.util.Arrays.sort(list);
+		
+		int[] listOne = {2,3,6,8,22,23,34,43,74,76};
+		
+		for (int i = 0; i<list.length; i++){
+			System.out.print(list[i]+"   ");
+		}
+		
+		System.out.println();
+		
+		char[] listChars= {'E','A','Y','T','D','U','V'};
+		java.util.Arrays.sort(listChars,2,5);
+		for (int i = 0; i<listChars.length; i++){
+			System.out.print(listChars[i]+"   ");
+		}
+		
+		char[] listChar = {'E','A','D','T','Y','U','V'};
+		
+		System.out.println();
+		
+		java.util.Arrays.sort(listChars);
+		for (int i = 0; i<listChars.length; i++){
+			System.out.print(listChars[i]+"   ");
+		}	
+		System.out.println();
+		System.out.println(java.util.Arrays.binarySearch(listChars,'E'));
+		System.out.println(java.util.Arrays.equals(list,listOne));
+		System.out.println(java.util.Arrays.equals(listChars,listChar));
+		
+		java.util.Arrays.fill(listOne, 9);
+		java.util.Arrays.fill(listOne, 1,4,7);
+		for (int i = 0; i<listOne.length; ++i){
+			System.out.print(listOne[i]+"   ");
+		}
+		
+	}
+}
+====================================================================================
+输出结果
+2   3   6   8   22   23   34   43   74   76   
+E   A   D   T   Y   U   V   
+A   D   E   T   U   V   Y   
+2
+true
+false
+9   7   7   7   9   9   9   9   9   9   
+--------------------------------------------------------------------------------------

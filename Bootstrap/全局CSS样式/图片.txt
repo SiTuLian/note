@@ -1,0 +1,10 @@
+.img-responsive 类可以让图片支持响应式布局
+如果需要让使用了 .img-responsive 类的图片水平居中，请使用 .center-block 类，不要用 .text-center
+
+SVG 图像和 IE 8-10
+在 Internet Explorer 8-10 中，设置为 .img-responsive 的 SVG 图像显示出的尺寸不匀称。为了解决这个问题，在出问题的地方添加 width: 100% \9; 即可。Bootstrap 并没有自动为所有图像元素设置这一属性，因为这会导致其他图像格式出现错乱。
+
+图片形状
+.img-rounded	//圆角
+.img-circle	//圆形
+.img-thumbnail	//正方

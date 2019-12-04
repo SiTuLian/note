@@ -1,0 +1,53 @@
+聚合函数:	sum()	求和；avg()	求平均；max()	最大值；min()	最小值；count()	计数；
+
+聚合函数只能用于可以进行加减乘除的列
+
+sum() 是 相同种类的产品的总价格
+count() 是 计算相同种类的有几个
+avg() 相当于sum()/count()
+
+用法
+
+结合where，根据某些特定条件
+
+select SUM(price) as 价格 from Product
+where CatCode='A02'
+
+group by  分组
+
+将相同的分成一组
+
+--统计所有catcode相同的价值的总和
+select catcode, sum(price) as 总和 from Product
+group by CatCode
+
+--select 出现的 catcode 必须在 group by 出现
+
+--统计所有price相同的库存量的总和
+select price,SUM(stockNum) from Product
+group by Price
+
+
+--统计catcode和price相同的 price总和，和 price的个数
+select catcode,price, sum(price) as 总和, COUNT(Price) as 个数 from Product
+group by CatCode,price
+
+
+having	筛选
+
+select catcode,SUM(stockNum) as 总库存量 from Product
+group by CatCode
+having SUM(StockNum)>50
+
+where 与 having 的区别
+
+where 是直接筛选列；having 是筛选 使用聚合函数 统计后的值，必须放在group by后面
+
+
+
+
+
+
+
+
+

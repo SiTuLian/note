@@ -1,0 +1,52 @@
+package edu.mowangxueyuan.fin;
+
+class A1{
+	public void say1() {
+		System.out.println("A1--say1");
+	}
+	public void say2() {
+		System.out.println("A1--say2");
+	}
+}
+
+class B1 extends A1{
+	public void say1() {
+		System.out.println("B1--say1");
+	}
+	public void say3() {
+		System.out.println("B1--say3");
+	}
+}
+
+public class FinalTest02 {
+	
+	/*
+	 * 多态性
+	 *      多态性的表现：
+	 *      			1.方法的重写与重载
+	 *      			2.对象的多态性
+	 *      对象的多态性：
+	 *      			向上转型：程序会自动完成
+	 *      				父类		父类对象  ==  子类实例
+	 *      			向下转型：强制类型转换
+	 *      				子类		子类对象  ==  (子类)父类实例
+	 */
+
+	public static void main(String[] args) {
+//		//向上转型
+//		B1 b1 = new B1();
+//		A1 a1 = b1;
+//		a1.say1();
+//		a1.say2();
+		
+		//向下转型，向下转型要先发生向上转型
+		A1 a1 = new B1();
+		B1 b1 = (B1)a1;
+		
+		b1.say1();
+		b1.say2();
+		b1.say3();
+		
+	}
+	
+}

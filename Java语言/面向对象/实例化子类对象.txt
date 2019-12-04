@@ -1,0 +1,25 @@
+package edu.mowangxueyuan.test;
+
+class A{
+	public A() {
+		System.out.println("拓跋天雄");
+	}
+}
+
+class B extends A{
+	public B() {
+		System.out.println("楚天狂");
+	}
+}
+
+public class ExtendsTest02 {
+	
+	/*
+	 * 实例化子类对象，先调用父类构造，再调用子类构造
+	 */
+
+	public static void main(String[] args) {
+		B b = new B();
+	}
+
+}

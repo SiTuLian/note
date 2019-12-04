@@ -1,0 +1,46 @@
+package edu.mowangxueyuan.test;
+
+
+class Worker{
+	int age;
+	String name;
+	private float achievement;
+	public float getAchievement() {
+		return achievement;
+	}
+	public void setAchievement(float achievement) {
+		this.achievement = achievement;
+	}
+}
+
+class Student extends Worker{
+	int score;
+	public void tell() {
+		System.out.println(name+"  "+age+"  "+score+"  "+getAchievement());
+	}
+}
+
+
+public class ExtendsTest01 {
+	
+	/*
+	 * 继承的限制
+	 *         1.继承中只允许单继承
+	 *         2.子类不允许访问父类的私有成员
+	 *         
+	 *         单继承   一个子类只能继承一个父类，不能继承多个父类
+	 *         
+	 *         age 和 name 不是父类私有的
+	 *         achievement 是  父类私有的，不能直接访问，必须借助  set() 和  get() 方法 
+	 */
+
+	public static void main(String[] args) {
+		Student student = new Student();
+		student.age = 16;
+		student.name = "小明";
+		student.score = 90;
+		student.setAchievement(90.5f);
+		student.tell();
+	}
+	
+}

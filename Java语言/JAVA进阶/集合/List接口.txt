@@ -1,0 +1,8 @@
+List接口允许接口重复
+
+子接口：ArrayList(线程安全),Vector(非线程安全)
+
+Set接口不允许接口重复
+
+HashSet 散列存放
+TreeSet	有序存放

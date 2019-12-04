@@ -1,0 +1,13 @@
+create table bianLian  建表
+
+--注释
+
+create table emp
+(
+	 emp_id  int    constraint  pk          primary key,
+      -- 字段名 数据类型    约束    约束名    主键约束（约束类型）
+	 emp_id  int    constraint  pk          foreign key  references dept(dept_id)
+						   外键          来自    表名(字段名)
+)
+
+identity(1,1) 主键自增

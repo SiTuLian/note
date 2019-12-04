@@ -1,0 +1,11 @@
+创建画布
+
+$img = imagecreate(200,60);//参数宽高
+imagecolorallocate($img,255,255,255);//颜色
+header("Content-type:image/png");
+
+imagepng($img);//输出
+
+其他请查看php开发文档 图像生成和处理
+
+jpGraph 请查看API

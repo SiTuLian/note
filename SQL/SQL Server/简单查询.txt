@@ -1,0 +1,47 @@
+--查询表的全部
+select * from LoginLog
+
+--查询表的指定项
+select accCode, IP from LoginLog
+
+--查询表的指定项，并删除重复数据
+select distinct accCode, ip from LoginLog
+
+--返回指定行数
+select top 3 * from Account
+select top 3 AccCode, Email from Account
+select top 50 percent * from Account
+select top 50 percent accCode, email from Account  --percent 返回百分比
+
+--返回时改变列名称
+select top 4 accCode as 产品编号, email as 邮箱 from Account
+
+--使用列表达式
+select Proname, price*stockNum as 总金额 from Product
+
+--where 条件限制
+select Proname, price*stockNum as 总金额 from Product where price*stockNum>5000
+--where 查询日期
+select * from Account where birthday>'1990-1-1'
+
+--模糊查询
+select * from Product where ProName like '%电池%'--% 代表前后任意个字符; %电池 代表以电池结束；电池% 代表以电池开头
+select * from Product where ProCode like 'A0___'-- _ 下划线限定长度，一个下划线代表任意一个字符
+select * from Product where ProCode like '_0_0_'
+select * from Product where ProCode like '[AB]____' -- 中括号里代表一个范围[AB] A或B
+select * from Product where ProCode like '[^B]____' -- ^除B以外的
+
+--范围比较 and between or in
+select * from Product where Price>60 and Price<100 --and 并且
+select * from Product where Price between 60 and 100 --between 在什么之间,有包含等于的意思
+select * from Product where Price>200 or Price<100 --or 或者
+select * from Product where CatCode in ('A01','A06','A02')-- in 一个集合
+
+--空值
+select * from Product where Description is null --返回空值
+select * from Product where Description is not null --返回非空值
+
+--排列
+select * from Product order by Price --升序排列
+select * from Product order by Price desc --降序排列
+select * from Product where Price>100 order by Price desc --条件限制放在前面

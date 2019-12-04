@@ -1,0 +1,21 @@
+package edu.mowangxueyuan.randomSample;
+
+public class ClassTest03 {
+
+	/**
+	 * 递归调用
+	 */
+	public static void main(String[] args) {
+		System.out.println(addNumber(100));
+
+	}
+	
+	public static int addNumber(int number){
+		if (number == 1){
+			return 1;		// 程序出口
+		}
+		else{
+			return number + addNumber(number-1);
+		}
+	}
+}

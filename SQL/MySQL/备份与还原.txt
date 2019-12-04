@@ -1,0 +1,37 @@
+利用XAMPP的Shell打开命令控制行的窗口
+
+登录 mysql
+
+mysql -u root -p password mysql
+
+其中password 为密码
+
+若没有密码则
+mysql -u root mysql
+
+登录后进行备份
+mysqldump -u root -p mylessons >D:/SQL_back/mylessons_20190304.sql
+
+mylessons 要备份的数据库
+
+D:/SQL_back/mylessons_20190304.sql   存放路径
+mylessons_20190304.sql	             文件名
+
+之后会有Enter password: 输入密码，还原时要用
+
+
+备份结束
+-------------------------------------------------------
+
+还原
+
+先创建好数据库用来还原数据   如copyMylessons
+mysql -u root -p copyMylessons < D:/SQL_back/mylessons_20190304.sql
+
+copyMylessons    用来还原的数据库
+
+Enter password:  输入之前设定的密码
+
+还原结束
+
+

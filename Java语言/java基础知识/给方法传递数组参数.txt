@@ -1,0 +1,31 @@
+package edu.mowangxueyuan.randomSample;
+
+public class ClassArray04 {
+
+	/**
+	 * 给方法传递数组参数
+	 */
+	public static void main(String[] args) {
+		int number = 3;
+		int[] array = {1,2,3,4,5};
+		array(number,array);
+		System.out.println();
+		System.out.println(number+"   "+array[0]);//number的数值没有改变，而数组的值改变了,
+												  //因为数组是引用，内存地址是相同的
+
+	}
+	
+	public static void array(int number, int[] a){
+		number = 5;
+		a[0] = 3;
+		
+		for (int i = 0; i<a.length; ++i){
+			System.out.print(a[i]+"   ");
+		}
+	}
+}
+========================================================================================
+输出结果
+3   2   3   4   5   
+3   3
+-------------------------------------------------------------------------------

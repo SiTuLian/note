@@ -1,0 +1,34 @@
+package edu.mowangxueyuan.fin;
+
+
+class Con1<T>{
+	private T name;
+	public Con1(T name) {
+		this.name = name;
+	}
+
+	public T getName() {
+		return name;
+	}
+
+	public void setName(T name) {
+		this.name = name;
+	}
+	public void tell() {
+		System.out.println(name);
+	}
+			
+}
+
+public class Class {
+			
+		/*
+		 *	在构造方法中使用泛型
+		 */
+
+	public static void main(String[] args) {
+		Con1<String> c = new Con1<String>("天涯落风");
+		c.tell();
+	}
+
+}

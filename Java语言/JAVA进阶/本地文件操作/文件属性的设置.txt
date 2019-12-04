@@ -1,0 +1,12 @@
+import java.io.File;
+
+File file = new File("hello.txt");
+
+//文件可写
+file.setWritable();
+//文件可读
+file.setReadable();
+//文件只读
+file.setReadOnly();
+
+//以上均返回boolean，true为开放权限，false为关闭权限

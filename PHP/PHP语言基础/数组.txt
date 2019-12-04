@@ -1,0 +1,49 @@
+创建数组
+
+$array = array();
+$array = [] //短数组
+
+$array = array(1=>'a',2=>'b','c','d');
+
+//输出数组
+print_r()
+
+遍历数组	foreach()
+	
+	foreach($url as $key=>$link){	//$url	是 已经定义的数组
+		//
+	}
+
+统计数组的个数	count(mixed $array [, int $mode])
+			
+			$array	要计算的数组
+			$mode	若为1，则可计算多维数组，不然全当一维数组计算
+
+查询数组中指定的元素	array_search(mixed $needle, array $haystack [, bool $strict])
+			
+				$needle		指定在数组中搜索的值
+				$haystack	指定被搜索的值
+				$strict		默认值为false,若为true，还将在数组中检查给定值的类						型。
+
+删除数组中最后的一个元素	array_pop()
+在数组后面添加元素		array_push($array, $var)//$var 要添加的数组
+删除数组中重复的元素		array_unique()
+
+数组排序
+	降序，不保持索引关系			sort()
+	逆向					rsort()
+	降序并保持索引关系			asort()
+	逆向					arsort()
+	对数组按照键名排序			ksort()
+	逆向					krsort()
+	用自然排序算法排序			natsort()
+	用自然排序算法排序,不区分大小写		natcasesort()
+
+数组计算函数
+
+	计算数组中所有值的和		array_sum()
+	合并一个或多个数组		array_merge()
+	计算数组的差集			array_diff()
+	带索引检查计算数组的差集	array_diff_assoc()
+	计算数组的交集			array_intersect()
+	带索引检查计算数组的交集	array_intersect_assoc()

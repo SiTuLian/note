@@ -1,0 +1,33 @@
+导航
+Bootstrap 中的导航组件都依赖同一个 .nav 类，状态类也是共用的。改变修饰类可以改变样式。
+
+标签页   .nav-tabs
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
+
+胶囊式标签页   .nav-pills 
+
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
+
+胶囊是标签页也是可以垂直方向堆叠排列的。只需添加 .nav-stacked 类。
+
+<ul class="nav nav-pills nav-stacked">
+  ...
+</ul>
+
+两端对齐的标签页     .nav-justified     两端对齐的导航条导航链接已经被弃用了。
+
+禁用的链接      .disabled
+链接功能不受到影响
+这个类只改变 <a> 的外观，不改变功能。可以自己写 JavaScript 禁用这里的链接。
+
+
+
+

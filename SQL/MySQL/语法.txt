@@ -1,0 +1,180 @@
+
+查看数据库	show databases	
+指定查看数据库	show create database 数据库名
+
+show engines	查看储存引擎
+
+
+
+创建数据库	create database 数据库名
+使用数据库	use 数据库名----------------------要操作前必须用声明这句
+删除数据库	drop database database_name
+创建表---同Server
+
+mysql约束
+	主键约束    primary key
+	外键约束    foreign key
+	唯一约束    unique
+	非空约束    not null
+	默认约束    default '默认值'
+
+约束----除外键外相同
+设置多字段主键	primary key[字段1，字段2，字段3……]
+外键约束
+
+ constraint  pk【约束名】     foreign key(外键字段)  references 依赖的表(依赖的主键字段)
+
+自增属性      数据类型为 整型  auto_increment
+
+
+查看数据库基本结构	desc 表名
+查看数据表详细结构	show create table table_name\G
+
+修改表名	alter table 旧表名 rename 新表名
+修改字段数据类型	alter table 表名 modify 字段 数据类型
+修改字段名	alter table 表名 change 旧字段名 新字段名 新数据类型
+添加字段	alter table 表名 add 新字段名 数据类型  -------------------默认在末尾添加
+		alter table 表名 add 新字段名 数据类型 first --------------默认在首部添加
+		alter table 表名 add 新字段名 数据类型 first 已存在的字段名   在这个字段名后添加
+
+删除字段	alter table 表名 drop 字段名
+
+
+修改字段排序	alter table 表名 modify 字段1 数据类型 first | alter 字段2
+
+更改表的储存引擎	alter table 表名 engine = 更改后的存储引擎名
+
+删除外键约束	alter table 表名 drop foreign key 外键约束名
+
+删除没有被关联的表	drop table [if exists]表1,表2,表3
+
+
+插入数据
+	insert into 表名(列名1，列名2……) values(……)
+
+更新数据
+	update 表名 set name = '王小明' where id=1
+
+删除数据
+	delete from 表名 where  限定语句
+
+
+---------------------运算符---------------------
+
++    -     *    /    %
+
+=			等于
+<=>			安全等于,可比较null
+<>			不等于
+<=
+>=
+<
+>
+is null			判断一个值是否为null
+in not null		判断一个值是否不为null
+least			当有两个或多个参数时，返回最小值
+greatest		当有两个或多个参数时，返回最大值
+betweeen and		判断一个值是否落在两个值之间
+in			判断一个值是In列表中的任意一值
+not in			判断一个值不是In列表中的任意一值
+like			通配符匹配	模糊查询
+regexp			正则表达式匹配
+
+
+NOT或!		非
+AND或&&		且
+OR或||		或
+XOR		异或
+
+----------------------------------------------查询-------------------------------------
+
+与SQL SERVER相同
+
+除了top  mysql为limit
+
+select * from emp limit 2
+select * from emp limit 2,4
+
+-------------------------------------------存储过程与储存函数-------------------------
+
+创建储存过程
+	create procedure proc_name(OUT pp1 int)//out 输出参数    pp1参数名   int  数据类型   IN  输出参数  INOUT 输入输出函数
+调用储存过程
+	call sp_name(参数)
+删除储存过程
+	drop procedure proc_name
+
+创建储存函数
+	create function func_name(OUT pp1 int)
+调用储存函数
+	select func_name(参数)
+删除储存函数
+	drop function func_name
+
+储存过程
+DELIMITER //
+  CREATE PROCEDURE mypage(IN page int)
+    BEGIN
+      SELECT * FROM blodpost LIMIT page,10;
+    END
+    //
+DELIMITER ;
+
+-----------------------------------流程控制语句--------------------------------------
+
+declare  定义变量
+
+declare v1 int
+set v1 = 6;//赋值
+
+declare v2 int default 6   //声明变量v2 默认值为6
+
+控制流程
+
+if----else
+case----when----then
+
+
+//循环
+add_sum:loop
+    //----
+end loop add_sum//add_sum为开始结束的标识符
+
+
+leave 跳出任何被标注的流程控制语句
+iterate   只能跳出loop,repeat,while，是跳出本次循环，进入下一次循环
+
+语法格式
+	leave 开始结束标识符
+	iterate 开始结束标识符
+
+repeat     相当于   do---while
+while
+
+
+
+------------------------------------------函数-------------------------------
+MySQL函数
+http://www.runoob.com/mysql/mysql-functions.html
+
+
+
+
+--------------------------------------------------------------------------------
+
+创建视图	create view view_name
+查看视图基本信息	show table status like '视图名'\G
+查看视图详细信息	show create view  视图名\G
+
+修改视图	create or replace view (id,name,bumen)
+
+update 视图 set name = '王小明' where id=1
+
+删除视图	drop view if exists 视图名
+
+
+
+
+
+
+

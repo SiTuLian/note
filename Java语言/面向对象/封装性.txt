@@ -1,0 +1,40 @@
+
+class Person{
+	private int age;//外部无法引用
+	private String name;
+	
+	public int getAge(){
+		return age;
+	}
+	public void setAge(int age){
+		this.age = age;
+	}
+	
+	public String getName(){
+		return name;
+	}
+	public void setName(String name){
+		this.name = name;
+	}
+	
+	public void tell(){
+		//得到
+		System.out.print("age:"+getAge()+"\n"+"name:"+getName());
+	}
+	
+	//get 和  set 的 快捷方式: 鼠标右键单击->Source->Getters and Setters
+}
+
+public class Class06 {
+
+	/**
+	 * 封装性
+	 */
+	public static void main(String[] args) {
+		Person per = new Person();
+		per.setAge(30);//设置
+		per.setName("张三");
+		per.tell();
+
+	}
+}

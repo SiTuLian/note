@@ -1,0 +1,129 @@
+package edu.mowangxueyuan.ScientificComputer;
+
+import java.util.Scanner;
+
+class Calculate{
+	Scanner scanner = new Scanner(System.in);
+	
+	int number1, number2;//两个数值
+	char signOfOperation;//运算符号
+	int result;
+	int newNumber;
+	byte choose;
+	
+	//输入数值与运算符号
+	public void input() {
+		this.number1 = scanner.nextInt();
+		this.signOfOperation = scanner.next().charAt(0);
+		this.number2 = scanner.nextInt();
+	}
+	
+	//判断运算符号
+	public void judge() {
+		switch (signOfOperation) {
+		case '+':
+			result = number1 + number2;
+			System.out.println(result);
+			break;
+		case '-':
+			result = number1-number2;
+			System.out.println(result);
+			break;
+		case '*':
+			result = number1*number2;
+			System.out.println(result);
+			break;
+		case '/':
+			result = number1/number2;
+			System.out.println(result);
+		}
+	}
+	
+	//选择模式
+	public void mode(byte choose) {
+		this.choose = choose;
+		
+		if (choose == 1) {
+			System.out.println("请重新输入数值和运算符号，并以空格隔开！");
+			result = 0;
+			input();
+			judge();
+		}
+		if (choose == 2) {
+			System.out.println("请输入运算符号和数值，并以空格隔开，输入非加减乘除符号，则返回主页面！");
+			continuousCalculation();
+		}
+		
+	}
+	
+	//连续计算
+	public void continuousCalculation() {
+		this.signOfOperation = scanner.next().charAt(0);
+		
+		while (signOfOperation == '+' || signOfOperation == '-' || signOfOperation == '*' || signOfOperation == '/') {
+			
+			this.newNumber = scanner.nextInt();
+			this.againJudge();
+			this.signOfOperation = scanner.next().charAt(0);
+		}
+		
+	}
+	
+	//连续判断运算符号
+	public void againJudge() {
+		switch (signOfOperation) {
+		case '+':
+			result += newNumber;
+			System.out.println(result);
+			break;
+		case '-':
+			result -= newNumber;
+			System.out.println(result);
+			break;
+		case '*':
+			result *= newNumber;
+			System.out.println(result);
+			break;
+		case '/':
+			result /= newNumber;
+			System.out.println(result);
+		}
+	}
+	
+}
+
+public class ScientificCalculator {
+
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("请输入数值和运算符号，并以空格隔开！");
+		
+		Calculate calculate = new Calculate();
+		calculate.input();
+		calculate.judge();
+		
+		byte number;
+		
+		do
+		{
+			System.out.println("如要开始新的计算，请按1");
+			System.out.println("如要继续计算，请按2");
+			System.out.println("退出程序，请按3");
+			number = scanner.nextByte();
+			
+			if (number == 1 || number == 2) {
+				calculate.mode((byte)(number));
+			}
+			if (number == 3) {
+				break;
+			}
+			
+		}while(number == 1 || number == 2);
+		
+		
+		
+	}
+	
+}

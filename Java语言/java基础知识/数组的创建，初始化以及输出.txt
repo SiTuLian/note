@@ -1,0 +1,30 @@
+package edu.mowangxueyuan.randomSample;
+
+public class ClassArray {
+
+	/**
+	 * 数组的创建，初始化以及输出
+	 */
+	public static void main(String[] args) {
+		int[] array;//声明数组
+		int len = 10;
+		array = new int[len];//实例化 为数组开辟空间，动态
+		
+//		int[] array = new int[10];  同时声明数组和开辟空间
+		
+		int[] arrayOne = {1,2,3,4,5};//静态
+		
+		//数组初始化
+		for (int i = 0; i<len; ++i){
+			array[i] = i*10;
+		}
+		
+		for (int i = 0; i<len; ++i){
+			System.out.print(array[i]+"\t");
+		}
+	}
+}
+==============================================================================
+输出结果
+0	10	20	30	40	50	60	70	80	90
+-------------------------------------------------------------------------------

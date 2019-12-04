@@ -1,0 +1,33 @@
+package edu.mowangxueyuan.fin;
+
+class A1{
+	
+}
+
+class B1 extends A1{
+	
+}
+
+public class FinalTest02 {
+	
+	/*
+	 * instanceof 关键字
+	 * 
+	 * 判断一个对象是不是一个类的实例,返回值是一个boolean类型
+	 */
+
+	public static void main(String[] args) {
+		A1 a1 = new A1();
+		System.out.println(a1 instanceof A1);
+		System.out.println(a1 instanceof B1);
+		a1 = new B1();
+		System.out.println(a1 instanceof B1);
+	}
+	
+}
+============================================================================
+输出结果
+true
+false
+true
+-----------------------------------------------------------------------------

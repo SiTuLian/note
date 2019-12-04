@@ -1,0 +1,41 @@
+package edu.mowangxueyuan.randomSample;
+
+/*
+ * 类的创建使用class关键字，命名时第一个字母要大写
+ */
+class Student{
+	 //类的属性
+	String name;
+	int age;
+	float score;
+	//类的方法，与C语言的结构体最大的不同;别加修饰符 static
+	public void option(){
+		System.out.println(name+"  "+age+"  "+score);
+	}
+}
+
+public class ClassTest02 {
+
+	/**
+	 * 类的创建，声明与使用
+	 */
+	public static void main(String[] args) {
+		Student dumbass;//声明
+		dumbass = new Student();//实例化操作
+		
+//		Student dumbass = new Student();// 两步和一
+		
+		// 给类的属性赋值
+		dumbass.name = "小明";
+		dumbass.age = 15;
+		dumbass.score = 33.3f;// 浮点数默认为 double型 必须加上 f 说明是 float
+		// 调用类的方法
+		dumbass.option();
+
+	}
+
+}
+================================================================================================
+输出结果
+小明  15  33.3
+-------------------------------------------------------------------------------------------------

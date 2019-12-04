@@ -1,0 +1,19 @@
+import java.io.File;
+
+File file = new File("hello.txt");
+
+file.exists()			判断文件是否存在
+file.getName()			读取文件名称
+file.getPath()			读取文件路径
+file.getAbsolutePath()		读取文件绝对路径
+file.getParent()		读取文件父级路径
+file.length()			读取文件大小，单位为byte，返回值为long
+file.isHidden()			判断文件是否被隐藏
+file.canRead()			判断文件是否可读
+file.canWrite()			判断文件是否可写
+file.isDirectory()		判断文件是否为文件夹
+
+
+
+
+

@@ -1,0 +1,9 @@
+设置线程的优先级有可能提高线程的权重，先执行
+
+Thread.MIN_PRIORITY	1
+Thread.MAX_PRIORITY	10
+Thread.NORM_PRIORITY	5
+
+利用setPriority(Thread.MIN_PRIORITY);
+
+如果什么都不设置默认值是5，如主线程

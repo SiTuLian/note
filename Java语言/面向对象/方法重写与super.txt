@@ -1,0 +1,38 @@
+package edu.mowangxueyuan.test;
+
+class Prefessor{
+	void tell() {
+		System.out.println("我是父类方法");
+	}
+}
+
+class Teacher extends Prefessor{
+	public void tell() {
+		super.tell();// 调用父类方法
+		System.out.println("我重写了方法");
+	}
+}
+
+public class ExtendsTest03 {
+	
+	/*
+	 * 方法重写与super
+	 * 
+	 * 重写   	子类定义了和父类同样名称的方法名
+	 * 		方法名相同，返回值相同，参数相同
+	 *      要调用父类方法时，需要用super
+	 *      
+	 * 重写的限制
+	 * 			子类方法不能拥有比父类方法更严格的访问权限
+	 * 			private < default < public
+	 *          
+	 *          private 只能在本类中访问
+	 *          default 在包中访问，默认状态下
+	 *          public  在整个工程中访问
+	 */
+
+	public static void main(String[] args) {
+		Teacher teacher = new Teacher();
+		teacher.tell();
+	}
+}

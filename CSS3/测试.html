@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+     .ui-wrap{
+      float: left;
+      width: 100%;
+      overflow: hidden;
+      clear: both;
+    }
+    .s-left,.s-right{
+      float: left;
+      height: 200px;
+    }
+    .s-left,.s-right{
+      width: 200px;
+    }
+    .s-middle{
+      height: 200px;
+      margin: 0 200px;
+      background: red;
+    }
+    .s-left{
+      background: green;
+      margin-left: -100%;
+    }
+    .s-right{
+      margin-left: -200px;
+      background: yellow;
+    }
+
+  </style>
+</head>
+<body>
+    <div class="ui-wrap">
+        <div class="s-middle"></div>
+      </div>
+      <div class="s-left"></div>
+      <div class="s-right"></div>
+</body>
+</html>

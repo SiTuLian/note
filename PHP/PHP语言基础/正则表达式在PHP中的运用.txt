@@ -1,0 +1,16 @@
+preg_filter			执行一个正则表达式搜索和替换
+preg_grep			返回匹配模式的数组条目
+preg_last_error			返回最后一个PCRE正则表达式执行产生的错误代码
+preg_match_all			执行一个全局正则表达式匹配
+preg_match			执行正则表达式
+preg_quote			转义正则表达式字符
+preg_replace_callback		执行一个正则表达式搜索并且使用一个回调进行替换
+preg_replace			执行一个正则表达式的搜索和替换
+preg_split			通过一个正则表达式分割字符串
+
+
+
+int preg_match(string $pattern, string $subject [, array &$matches])
+		
+		$pattern	正则表达式
+		$subject	要匹配的字符串

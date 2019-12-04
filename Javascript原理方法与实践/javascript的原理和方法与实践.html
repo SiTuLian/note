@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    //要在服务端才能使用
+    let restaurant = new Worker('restaurant.js');
+    
+    console.log(new Worker('restaurant.js'))
+
+    function receive(event){
+      console.log('下楼');
+      console.log('拿外卖')
+      console.log('上楼')
+      console.log('吃')
+    }
+
+    restaurant.onmessage = receive; //绑定收获处理方法
+    restaurant.addEventListener('message',receive)
+
+    restaurant.onerror = function(event){
+      console.log('出错')
+    }
+
+    console.log('订餐')
+    restaurant.postMessage('卤面')
+    
+
+    //取消订单
+    restaurant.terminate();
+
+    let pageNum = 1;
+    let reading = setInterval(()=>{
+      if(pageNum>500){
+        clearInterval(reading)
+        console.log(pageNum++)
+      }
+    },100)
+
+  </script>
+</body>
+</html>

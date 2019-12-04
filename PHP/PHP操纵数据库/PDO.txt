@@ -1,0 +1,75 @@
+PDO链接mysql
+
+$dsn = "mysql:host=localhost;dbname=database_name";
+$user = "root";
+$pwd = "password";
+
+try{
+    $pdo = new PDO($dsn,$user,$pwd);
+}catch(Exception $e){
+    echo $e->getMessage()."<br/>"
+}
+
+执行查询的语句
+
+1.exec(query);
+
+count = $pdo->exec(); //返回受影响的行数
+
+2.query();//返回PDOStatement对象
+
+3.预处理语句，可防止SQL注入
+
+//prepare预处理
+$sth = $pdo->prepare('SELECT * FROM member WHERE id>? AND level ?');//? 占位符
+$sth->execute(array(2,'C'));//execute//折行语句，并替换参数
+$res = $sth->fetchAll();
+var_dump($res);
+
+PDO获取结果集
+
+fetch()//获取结果集的下一行记录
+fetchAll()//获取所有行
+fetchColumn()//获取结果集中下一行指定列的值
+
+
+使用默认模式捕获SQL语句中的错误
+
+print_r($res->errorInfo());
+
+
+
+
+PDO事务
+
+$options = array(PDO::ATTR_AUTOCOMMIT,0);//关闭自动提交
+
+开启事务    beginTransaction()
+提交事务    commit()
+事务回滚    rollback()
+
+try{
+
+    $pdo = new PDO($dsn,$user,$pwd);
+    $options = array(PDO::ATTR_AUTOCOMMIT,0);
+    $pdo->beginTransaction();
+    $sql = "update member SET credits = credits-10 where nickname = '张三'";
+    $res1 = $pdo->exec($sql);
+
+    if($res1==0){
+	throw new PDOException("张三扣除积分失败");
+    }
+    $res2=$pdo->exec("update member SET credits = credits+10 where nickname = '李四'");
+    if($res2==0){
+	throw new PDOException("李四获取积分失败");
+    }
+}catch(PDOException $e){
+    $pdo->rollBack();
+    echo $e->getMessage();
+}
+
+
+
+
+
+

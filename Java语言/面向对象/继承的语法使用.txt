@@ -1,0 +1,41 @@
+package edu.mowangxueyuan.test;
+
+//父类
+class Father{
+	String race;
+	public void tell(){
+		System.out.println(race);
+	}
+}
+
+//子类
+class Son extends Father{
+	String skill;
+	public void say(){
+		System.out.println(skill);
+	}
+}
+
+public class ExtendsTest {
+	
+	/*
+	 * 继承
+	 *     继承概念：子类拥有父类的所有属性和方法
+	 *     格式：
+	 *         class 子类名 extends 父类名{
+	 *         
+	 *         }
+	 *     在继承中，子类只是继承父类的属性和方法，其中的值是独立的
+	 */
+
+	public static void main(String[] args) {
+		Father father = new Father();
+		father.race = "天魔!";
+		father.tell();
+		Son son = new Son();
+		son.race = "天魔";
+		son.skill = "灼热地狱";
+		son.tell();
+		son.say();
+	}
+}

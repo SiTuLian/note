@@ -1,0 +1,32 @@
+package edu.mowangxueyuan.test;
+
+class One{
+	static String sw;
+	public void tell() {
+		System.out.println(sw);
+	}
+}
+
+class Two extends One{
+	
+}
+
+public class ExtendsTest04 {
+	
+	/*
+	 *  static的使用
+	 *  
+	 *  static 声明的是全局变量
+	 *  static 声明方法时，用 类名 调用
+	 *  使用static方法时，只能访问static的方法和属性，不能访问非static的属性和方法
+	 *  
+	 */
+	public static void main(String[] args) {
+		Two two = new Two();
+		Two.sw = "魔都";// static 声明的属性  直接通过 类名 调用
+		two.tell();
+		One one = new One();
+		one.tell();
+	}
+
+}

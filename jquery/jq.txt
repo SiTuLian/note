@@ -1,0 +1,159 @@
+事件绑定
+
+$("select").bind("event",function(){});
+
+改变绑定事件
+
+$("select").bind("event",function(){}).bind("event",function(){});
+
+合成事件
+
+hover(enter,leave)
+
+$("select").hover(function(){},function(){});
+
+toggle(fn1,fn2,fn3)//会按顺序触发函数，当触发最后一个函数后会触发第一个函数，如此循环
+
+$("select").toggle(function(){},function(){});
+
+停止事件冒泡
+event.stopPropagation()
+
+阻止默认行为
+event.preventDefault()
+
+获取事件的类型
+event.type
+
+获取触发事件的元素
+event.target
+
+获取光标相对于页面的x坐标和y坐标
+event.pageX
+event.pageY
+
+获取鼠标按键或键盘按键
+event.which
+
+	获取鼠标按键
+
+$("select").mousedown(function(e){
+    alert(e.which);// 1 == 鼠标左键；2 == 鼠标中键；3 == 鼠标右键
+})
+
+	获取键盘按键
+
+$("select").keyup(function(e){
+    alert(e.which);
+})
+
+获取<ctrl>按键
+event.metaKey
+
+
+移除事件
+$("select").unbind("event");
+
+移除其中一个事件
+$("select").bind("event",Myfun1 = function(){}).bind("event", Myfun2 = function(){});
+
+$("select").unbind("event","myfun1");
+
+
+模拟操作
+trigger()
+
+//在页面加载后会自动触发点击事件
+$("select").trigger("click");
+
+简写：$("select").click();
+
+添加事件命名空间
+
+$("select").bind("event.plugln",function(){});
+
+移除
+$("select").unbind(".plugln");
+
+
+停止动画
+stop()
+
+判断是否处于动画状态
+$("select").is(":animated")
+
+//序列化为字符串形式
+serialize()
+
+//将DOM元素序列化后，返回JSON格式的数据
+serializeArray()
+
+//对一个数组或对象按照key/value进行序列化
+$.param(obj)
+
+
+
+ajax的全局函数
+
+ajaxStart()//请求开始时
+ajaxStop()//请求结束时
+ajaxComplete()//请求完成时的函数
+ajaxError()//请求发生错误时执行的函数
+ajaxSend()//ajax发送前执行的函数
+ajaxSuccess()//ajax请求成功时执行的函数
+
+
+
+JQ插件的种类
+
+1.封装对象方法的插件
+2.封装全局函数的插件
+3.选择器插件
+
+
+jQuery.fn.extend()//封装对象方法的插件
+jQuery.extend()//封装全局函数的插件  选择器插件
+
+//编写封装对象方法的插件
+
+;(function($){
+    jQuery.fn.extend({
+	"color":function(value){
+	    return this.css("color",value);
+	}
+    })
+})
+
+//编写封装全局函数的插件
+
+
+;(function($){
+    jQuery.extend({
+	ltrim:function(text){
+	    return (text || "").replace(/^\+/g."");
+	}
+	rtrim:function(text){
+	    return (text || "").replace(/^\+$/g."");
+	}
+    })
+})
+
+
+
+//编写自定义选择器
+
+;(function($){
+    jQuery.extend($.expr[":"],{
+	between : function(a,i,m){
+	    var tmp = m[3].split(",");
+	    return tmp[0]-0<i&&i<tmp[1]-0;//tmp[0]-0;将本来的字符串"2"转换为数值2
+	}
+    })
+})
+
+
+
+
+
+
+

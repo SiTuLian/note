@@ -1,0 +1,55 @@
+package edu.mowangxueyuan.fin;
+
+abstract class Abs{
+	private int age;
+	int number = 5;
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public int getAge() {
+		return age;
+	}
+	
+	public void tell() {
+		System.out.println(getAge()+"   "+number);
+	}
+	// 抽象方法
+	public abstract void say();
+	public abstract int sum(int number);
+}
+
+class AbsDemo extends Abs{
+	// 重写 抽象方法
+	public void say() {
+		System.out.println("hello world");
+	}
+	public int sum(int number) {
+		this.number += number;
+		
+		return 0;
+	}
+}
+
+public class FinalTest {
+	
+	/*
+	 * 抽象类：包含一个抽象方法的类
+	 * 抽象方法：声明而未被使用的方法，必须借助抽象方法abstract声明，抽象方法无法直接调用，必须借助子类继承后使用
+	 * 抽象类被子类继承，如果子类不是抽象类，则必须重写抽象类中的所有抽象方法
+	 * 
+	 */
+
+	public static void main(String[] args) {
+		AbsDemo a = new AbsDemo();
+		a.setAge(30);
+		a.say();
+		a.sum(8);
+		a.tell();
+	}
+}
+===================================================================================
+输出结果
+hello world
+30   13
+------------------------------------------------------------------------------

@@ -1,0 +1,76 @@
+package edu.mowangxueyuan.randomSample;
+
+
+public class ClassTest01 {
+	
+
+	/**
+	 * 方法的构建，值传递，重载
+	 */
+	public static void main(String[] args) {
+		int a = 4, b = 5;
+		
+		int sum = add(a,b);//方法的值传递，构建的方法必须用上static
+		System.out.println(sum);
+		
+		String name = "灼热";
+		name = jn(name);
+		System.out.println(name);
+		
+		String name1, name2;
+	
+		name1 = "魔斗技——";
+		name2 = "斩天";
+		
+		name = jn(name1,name2);
+		System.out.println(name);
+	}
+	
+	/*
+	 * 方法的创建要在类内，主方法之外
+	 */
+	
+	public static int add(int numberOne, int numberTwo){
+		int sum;
+		sum = numberOne + numberTwo;
+		
+		return sum;
+	}
+	
+	/*
+	 * 除了 void 不用返回值之外，其他类型都需要返回值
+	 */
+	
+	public static String jn(String name){
+		name += "地狱";
+		
+		return name;// 不要写成 return "name"; 这样返回的是name这个字符串
+	}
+	/*
+	 * 方法的重载，方法名相同，但是传递参数的类型和个数不同
+	 */
+	public static String jn(String name1, String name2){
+		
+		return name1 + name2;
+	}
+	
+	/*
+	 * 方法的重载与返回值的类型不同无关
+	 */
+//	public static String test(){
+//		
+//		return " ";
+//	}
+//	
+//	public static int test(){
+//		
+//		return 0;
+//	}
+
+}
+=========================================================================
+输出结果
+9
+灼热地狱
+魔斗技——斩天
+--------------------------------------------------------------------------

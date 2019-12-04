@@ -1,0 +1,75 @@
+package edu.mowangxueyuan.randomSample;
+
+import javax.swing.JOptionPane;
+
+public class randomSampleSoftware {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		byte numberOfPeople;//班级的人数
+		byte mode;//可选择的模式
+		byte randomNumber;//储存随机数
+		byte len;//模式1指定的数量
+		byte[] array;//模式1的数组
+		int juger;//模式2，是否继续抽号
+		String str;//在对话框输入数字
+		String transform = "可悲的同学！\n";//将数字转换为字符串
+		
+		//输出相关说明
+		JOptionPane.showMessageDialog(null,"模式1为一次性抽取指定的数量；\n" +
+				"模式2为一次抽取1个再决定是否继续抽取；\n");
+		
+		
+		//对班级的人数进行纠错
+		do{
+			str = JOptionPane.showInputDialog("请输入班级的人数");
+			numberOfPeople = (byte)Integer.parseInt(str);//将字符串转化为int型再转换为byte型
+			if (numberOfPeople<=0){
+				JOptionPane.showMessageDialog(null, "输入错误！\n请重新输入!\n");
+			}
+		}while(numberOfPeople<=0);
+		//numberOfPeople = (byte)Integer.parseInt(str);//将字符串转化为int型再转换为byte型
+		
+		
+		//对模式进行纠错
+		do{
+			str = JOptionPane.showInputDialog("请选择模式");
+			mode = (byte)Integer.parseInt(str);
+			if (mode != 1 && mode != 2){
+				JOptionPane.showMessageDialog(null,"输入错误！\n请重新输入！\n");
+			}
+		}while(mode != 1 && mode != 2);
+		
+		//模式1
+		if (mode == 1){
+			str = JOptionPane.showInputDialog("请输入抽取的人数");
+			 len = (byte)Integer.parseInt(str);
+			 array = new byte[len];
+			 
+			 for(int i = 0; i<len; ++i){
+				 array[i] = (byte)(Math.random()*numberOfPeople);
+
+			 }
+			 
+			 for(int i = 0; i<len; ++i){
+				 transform += String.valueOf(array[i])+"\n";
+			 }
+			 
+			 JOptionPane.showMessageDialog(null, transform);
+		}
+		
+		if (mode == 2){
+			do{
+				randomNumber = (byte)(Math.random()*numberOfPeople);
+				transform = String.valueOf(randomNumber);
+				JOptionPane.showMessageDialog(null, transform);
+				juger = JOptionPane.showConfirmDialog(null,"是否继续？");
+				
+			}while(juger == JOptionPane.YES_OPTION);
+			
+		}
+	}
+
+}

@@ -1,0 +1,44 @@
+创建集合
+
+集合类 变量 = new 集合类();
+ArrayList list = new ArrayList();
+
+增添，删除用自身所拥有的方法，如 add(), remove()
+
+泛型
+
+ArrayList<String> list = new ArrayList<String>();
+
+自定义泛型
+
+class cachePool<T>{
+	
+	T temp;
+	
+	public void save(T temp){
+		this.temp = temp;
+	}
+
+	return temp;
+}
+
+Enumeration接口，可用于多个文件的合并流 SequenceInputStream
+
+Vector v = new Vector();
+
+v.add("JAVA");
+v.add("C#");
+v.add("C++");
+
+Enumeration en = v.elements();
+
+foreach循环
+
+for(容器中元素类型 临时变量: 容器变量){
+
+}
+
+for(Object obj: list){
+
+}
+

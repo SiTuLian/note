@@ -1,0 +1,17 @@
+
+class Student{
+	public void tell(){
+		System.out.println("hello world");
+	}
+}
+
+public class Class07 {
+
+	/**
+	 * 匿名对象
+	 */
+	public static void main(String[] args) {
+		// 匿名对象，只使用一次时，建议使用匿名对象
+		new Student().tell();
+	}
+}

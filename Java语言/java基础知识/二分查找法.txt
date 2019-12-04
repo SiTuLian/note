@@ -1,0 +1,37 @@
+
+public class Class01 {
+
+	/**
+	 * 二分查找法
+	 */
+	public static void main(String[] args) {
+		int[] array = {1,2,3,4,5,6,7,8,9,10};
+		System.out.println(find(array, 4));
+		System.out.println(find(array, 11));
+
+	}
+	public static int find(int[] list, int key){
+		int low = 0;
+		int high = list.length - 1;//因为 list.length 的值 为 10 , 但其数组没有下标10 所以要减去1
+		
+		while (high >= low){
+			int mid = (low + high)/2;
+			if (key < list[mid]){
+				high = mid - 1;
+			}
+			else if (key == list[mid]){
+				return mid;
+			}
+			else{
+				low = mid + 1;
+			}
+		}
+		
+		return -1;
+	}
+}
+========================================================================
+输出结果
+3
+-1
+-------------------------------------------------------------------------

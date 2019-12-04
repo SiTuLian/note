@@ -1,0 +1,6 @@
+set sql_safe_updates = 1;//where 只能通过主键的比较条件，mysql默认
+set sql_safe_updates = 0;//where 没有限制
+
+select wenti,daan,num from (select id,wenti from diaochawenti) as A
+	inner join daan
+		on A.id=daan.wenti_id;

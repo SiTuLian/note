@@ -1,0 +1,232 @@
+PHP的标记风格
+
+XML风格
+<?php
+
+    //
+?>
+
+脚本风格
+
+<script language="php">
+	//
+/script>
+
+简短风格
+
+<?
+   //   
+?>
+
+ASP风格
+
+<%
+	//
+%>
+
+----------------------------------------------------------------------------
+
+数据类型
+
+整型	浮点型	字符串型	布尔型	数组	对象	资源	空
+
+数据类型转换	
+方法一、
+	(数据类型)变量
+
+int			整型
+bool			浮点型
+string			字符串型
+array			数组
+float/double/real	浮点型
+object			对象
+unset			空
+
+方法二、
+	settype(变量,'数据类型');
+	返回布尔值
+
+检测数据类型
+is_bool
+is_string
+is_float/is_double
+is_int/is_integer
+is_null
+is_array
+is_object
+is_numeric	检测变量是否为数字或由数字组成的字符串
+
+------------------------------------------------------------------------
+定义常量
+
+define('常量名',值);
+
+const	常量名 = 值;
+
+定义变量
+
+	$+标识符
+			标识符：大小写字母，数字，下划线，第一位不能为数字
+
+	关于字符串
+		单引号和双引号都可以，但结果不同
+	$name = '张三';
+
+	echo '$name';//输出的是 $name
+	echo "$name";//输出的是 张三
+
+关于赋值
+	$a = 5;
+	$b = $a;//将$a的值赋值给$b，他们拥有各自的内存空间
+	
+	$c = 5;
+	$d = &$c;//引用赋值，$d指向$c的内存空间，相当于给$c取个别名$d
+
+-------------------------------------------------------------------------------
+
+函数
+	function 函数名(参数列表){
+		//
+	}
+	
+	function get($num1,&num2,$num3=0){
+		//
+	}
+	$num1	形参
+	&num2	引用传值
+	$num3	默认参数(可选参数)
+
+----------------------
+
+全局变量与局部变量
+
+	在函数外的是全局变量
+	在函数内的是局部变量
+	全局变量在函数内不能使用
+	若想在函数内使用或定义全局变量，用 global 进行修饰
+
+------------------------------------------------------------------
+命名空间
+
+	namespace    jike
+
+--------------------------------
+require_once	引用外部PHP文件
+
+----------------------------------------
+字符串相关函数
+
+去除首尾空格或指定的特殊字符	trim(string $str [,string $charlist])
+					$str		要操作的字符串
+					$charlist	指定的特殊字符
+
+				若不指定$charlist时，默认去除的字符：
+							
+							\0	null、空值
+							\t	tab、制表符
+							\n	换行符
+							\x0B	垂直制表符
+							\r	回车符
+							" "	空格
+				返回去除后的字符串
+
+
+去除左边的	ltrim()
+去除右边的	rtrim()
+
+
+获取指定字符串的长度	strlen(string $str)
+				$str	需要计算长度的字符串
+					是以字节来计算的，中文算3个;
+			$str = '12是';
+			strlen($str)//输出5
+
+获取指定字符串的长度	mb_strlen(string $str,string $encoding = mb_internal_encoding() )
+				$str		需要计算的字符串
+				$encoding	指定的字符编码，若省略，默认内部字符编码
+
+			$str = '12是';
+			mb_strlen($str,'UTF-8')//输出3
+
+截取纯英文	substr(string $str,int $start [,int $length])
+			$str	要截取的字符串
+			$start	开始位置，正数从首部算起，负数从尾部算起，0 是 第一位
+			$length	长度
+
+截取中英文混合	mb_substr(string $str,int $start [,int $length = NULL [, string $encoding = mb_internal_encoding() ]])	
+			$str	要截取的字符串
+			$start	开始位置，正数从首部算起，负数从尾部算起，0 是 第一位
+			$length	长度
+			$encoding	指定的字符编码，若省略，默认内部字符编码
+
+检索字符串	strstr(string $haystack, mixed $needle [, bool $before_ needle = false])
+			$haystack	指定从该字符串进行检索
+			$needle		指定检索的对象
+			$before_ needle	
+					$before_ needle	= false	返回从$needle到字符串结尾
+					$before_ needle = true	返回从$needle之前的内容
+
+		strrchr() 从尾部开始检索
+
+检索字符串，返回子字符串的位置
+		strpos(string $haystack, mixed $needle [,int $offset = 0])
+			$haystack	指定从该字符串进行检索
+			$needle		指定检索的对象
+			$offset		指定从哪个位置开始检索
+
+		strpos() 	区分大小写
+		stripos()	不区分大小写
+
+		strrpos()	从尾部开始检举，区分大小写
+		strripos()	从尾部开始检举，不区分大小写
+
+
+替换字符串	str_replace(mixed $search, mixed $replace, mixed $subject [, int &$count])
+			$search		要搜索的值
+			$replace	用于替换的字符串
+			$subject	被搜索和替换的字符串或数组
+			$count		替换发生的次数
+
+对指定字符串中的部分字符串进行替换	
+
+		substr_replace(mixed $string, mixed $replacement, mixed $strat [, int $leng])
+			$string		指定操作的字符串或数组
+			$replacement	用于替换的字符串
+			$strat		指定替换字符的开始位置
+			$leng		长度
+
+分割字符串	explode(string $delimiter, string $string [, int $limit])
+			$delimiter	边界的分隔字符
+			$string 	指定分割的字符串
+		
+合成字符串
+		implode(string $glue, array $pieces)
+			$glue		指定分隔符
+			$pieces		指定要被合成的数组
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+--多表查询，从其他地方取出数据
+SELECT procode, CatName, ProName, price, StockNum from Product,Category
+where Product.CatCode=Category.CatCode
+
+--内连接
+SELECT procode, CatName, ProName, price, StockNum
+from Product inner join Category
+on Product.CatCode=Category.CatCode
+
+--右连接
+SELECT procode, CatName, ProName, price, StockNum
+from Product right join Category
+on Product.CatCode=Category.CatCode
+
+--左连接
+SELECT procode, CatName, ProName, price, StockNum
+from Category left join Product
+on Product.CatCode=Category.CatCode
+
+--子查询
+select * from Product 
+where CatCode in(select CatCode from Category where CatName='手机电池')
+
+select procode, proname from Product
+where Price>(select Price from Product where ProName='卡士奇8g')
+
+----------------------------------
+
+--三个表的连接查询
+SELECT OrderInfo.AccCode, OrderItem.ProCode, Product.proname, Quantity
+from Product, OrderItem,OrderInfo
+where OrderItem.OrderId=OrderInfo.OrderId
+and Product.ProCode=OrderItem.ProCode
+and OrderInfo.AccCode='tom'
+
+-----------------------------------
+
+SELECT Product.ProCode, Product.proname, Quantity
+from Product,OrderItem
+where OrderId in (select OrderId from OrderInfo where AccCode='tom')
+and Product.ProCode=OrderItem.ProCode
+
+---------------------------
+
+SELECT OrderInfo.AccCode, OrderItem.ProCode, Product.proname, Quantity
+from Product inner join OrderItem inner join OrderInfo
+on OrderItem.OrderId=OrderInfo.OrderId
+on Product.ProCode=OrderItem.ProCode
+where OrderInfo.AccCode='tom'

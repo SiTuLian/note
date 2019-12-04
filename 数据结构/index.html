@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+   
+    function MySet(){
+      //属性
+      this.items = {};
+
+      //添加
+      MySet.prototype.add = function(value){
+
+        //判断元素是否重复
+        if(this.has(value)){
+          return false;
+        }
+
+        this.items[value] = value;
+
+        return true;
+      }
+
+
+      //删除
+      MySet.prototype.remove = function(value){
+
+        if(! this.has(value)){
+          return false;
+        }
+
+        delete this.items[value];
+
+        return true;
+      }
+
+      //查找
+      MySet.prototype.has = function(value){
+        return this.items.hasOwnProperty(value)
+      }
+
+      //清空
+      MySet.prototype.clear = function(){
+        this.items = {};
+      }
+
+      //大小
+      MySet.prototype.size = function(){
+        return Object.keys(this.items).length;
+      }
+
+      //返回一个包含集合所有值的数组
+      MySet.prototype.values = function(){
+        return Object.keys(this.items);
+      }
+
+
+      //集合间的操作
+
+      //并集
+      MySet.prototype.union = function(otherSet){
+        let unionSet = new MySet();
+        
+        let values = this.values();
+    
+        for(let i = 0; i<values.length; ++i){
+          unionSet.add(values[i]);
+        }
+     
+   
+
+        values = otherSet.values();
+
+        for(let i = 0; i<values.length; ++i){
+          unionSet.add(values[i]);
+        }
+
+        return unionSet;
+      }
+
+      //求交集
+      MySet.prototype.intersection = function(otherSet){
+        let intersectionSet = new MySet();
+
+        let values = this.values();
+        
+        
+        for(let i = 0; i<values.length; ++i){
+          if(otherSet.has(values[i])){
+            intersectionSet.add(values[i])
+          }
+        }
+
+        return intersectionSet;
+
+      }
+
+      //差集
+      MySet.prototype.difference = function(otherSet){
+        let differenceSet = new MySet();
+
+        let values = this.values();
+        
+        
+        for(let i = 0; i<values.length; ++i){
+          if(!otherSet.has(values[i])){
+            differenceSet.add(values[i])
+          }
+        }
+
+        return differenceSet;
+
+      }
+
+      //子集
+      MySet.prototype.subSet = function(otherSet){
+        let subSet = new MySet();
+        let values = this.values();
+        
+        
+        for(let i = 0; i<values.length; ++i){
+          if(!otherSet.has(values[i])){
+            return false;
+          }else{
+            subSet.add(values[i])
+          }
+        }
+
+        return true;
+
+      }
+
+    }
+
+    
+    let s1 = new MySet();
+    s1.add(1);
+ 
+    s1.add(3);
+    s1.add(4);
+
+    let s2 = new MySet();
+    s2.add(1);
+    s2.add(3);
+    s2.add(6);
+    s2.add(4);
+
+    // let unionSet =  s1.union(s2);
+    unionSet =  s1.subSet(s2);
+
+    console.log(unionSet)
+    
+  </script>
+</body>
+</html>

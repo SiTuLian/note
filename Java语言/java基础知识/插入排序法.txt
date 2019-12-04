@@ -1,0 +1,30 @@
+
+public class Class03 {
+
+	/**
+	 * 插入排序法
+	 */
+	public static void main(String[] args) {
+		int[] list = {4,5,2,77,43,88,13,26,24,87,42};
+		
+		for (int i = 1; i<list.length; i++){
+			int currentElement = list[i];
+			int k;
+			
+			for (k = i-1; k >=0 && list[k] > currentElement; --k){
+				list[k+1] = list[k];
+			}
+			
+			list[k+1] = currentElement;
+		}
+		
+		for (int i = 0; i<list.length; ++i){
+			System.out.print(list[i]+"  ");
+		}
+
+	}
+}
+==================================================================================
+输出结果
+2  4  5  13  24  26  42  43  77  87  88 
+-----------------------------------------------------------------------------------

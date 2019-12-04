@@ -1,0 +1,46 @@
+下拉菜单
+
+将下拉菜单触发器和下拉菜单都包裹在 .dropdown
+
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li role="separator" class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+
+.dropdown  //向下弹出下拉列表
+
+使button点击后可以出现下拉列表   .dropdown  
+.dropdown-toggle
+data-toggle="dropdown"
+
+.dropdown-menu    下拉菜单
+
+.dropup	//向上弹出下拉列表
+
+对齐
+B默认情况下，下拉菜单自动沿着父元素的上沿和左侧被定位为 100% 宽度。 为 .dropdown-menu 添加 .dropdown-menu-right 类可以让菜单右对齐。
+.dropdown-menu-right 类可以让菜单右对齐
+.dropdown-menu-left  类可以让菜单左对齐
+
+标题
+
+在任何下拉菜单中均可通过添加标题来标明一组动作。
+.dropdown-header    为下拉选项添加标题
+
+分割线
+为下拉菜单添加一条分割线，用于将多个链接分组。
+<li role="separator" class="divider"></li>
+
+
+禁用的菜单项
+为下拉菜单中的 <li> 元素添加 .disabled 类，从而禁用相应的菜单项。
+

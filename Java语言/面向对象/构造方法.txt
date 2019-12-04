@@ -1,0 +1,24 @@
+
+class People{
+	int age;
+	String name;
+	//访问修饰符  类名称
+	public People(int i , String n){
+		age = i;
+		name = n;
+		System.out.println("age"+"  "+name);
+	}
+	
+	//构造方法也可以进行重载
+}
+
+public class Class08 {
+
+	/**
+	 * 构造方法
+	 */
+	public static void main(String[] args) {
+		People man = new People(3,"张三");
+	}
+
+}

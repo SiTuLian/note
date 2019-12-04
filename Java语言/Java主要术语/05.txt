@@ -1,0 +1,19 @@
+actual parameter			实际参数
+argument				实参
+ambiguous invocation			歧义调用
+divide and comquer			分治
+formal parameter			形式参数
+information hiding			信息隐藏
+method					方法
+method abstraction			方法抽象
+method overloading			方法重载
+method signature			方法签名
+modifier				修饰符
+package					包
+pass-by-value				值传递
+parameter				形参
+return type				返回值类型
+return value				返回值
+scope of variable			变量作用域
+stepwise refinement			逐步求精
+stub					待完善方法

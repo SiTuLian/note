@@ -1,0 +1,31 @@
+创建Cookie
+
+setcookie('name','value');//创建cookie
+setcookie('name','value'，time()+60);//存在有效期限的
+
+name    cookie的变量名
+value   值
+expire  cookie的失效时间,用time()获取时间
+path    cookie在服务器有效的路径
+domain	cookie有效的域名
+secure	指明cookie()是否通过安全的HTTPS,值为0或1,   1只在HTTPS连接有效，0在HTTP和HTTPS均有效
+
+$_['cookiename']//获取cookie的值
+$_['values']//获取名为values的值
+
+删除cookie
+
+setcookie('name','')//值为空即可
+
+手动删除，删除cookie文件
+
+
+setcookie('name',''，time()-1);
+
+Cookie的生命周期
+
+如果没有设置有效期，在关闭浏览器会自动删除
+
+设置有效期会保存在硬盘，直到超时
+
+cookie不是无限的，超过限制，会随机删除Cookie

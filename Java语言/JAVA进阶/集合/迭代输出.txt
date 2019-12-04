@@ -1,0 +1,3 @@
+Iterator<String> iter = list.iterator();
+
+在迭代输出时不要用集合的remove方法删除元素，要用迭代器的remove

@@ -1,0 +1,158 @@
+控制台输出（无格式化）
+System.out.print();//无换行
+System.out.println();//有换行
+对话框输出（无格式化）
+import javax.swing.JOptionPane;//进行导入
+JOptionPane.showMessageDialog(null,字符串);
+
+控制台格式化输出
+System.out.printf();
+对话框格式化输出
+import javax.swing.JOptionPane;//进行导入
+JOptionPane.showMessageDialog(null,String.format("格式控制符", 变量));
+
+控制台输入
+next();接收控制台输入的字符串，无法接收空格
+nextLine();接收控制台输入的字符串，可以接收空格
+nextByte();读取byte类型的整数
+nextInt();读取int类型的整数
+nextLong();读取long类型的整数
+nextFloat();读取float类型的整数
+nextDouble();读取double类型的整数
+nextBoolean();读取boolean类型的整数
+next().charAt(字符位置);读取字符串中的一个字符
+
+步骤
+import java.util.Scanner;
+//创建Scanner对象
+Scanner scanner = new Scanner(System.in);
+//接收数据
+String str = scanner.next();
+
+对话框输入
+import javax.swing.JOptionPane;//进行导入
+JOptionPane.showInputDialog(x);//x为提示信息
+
+对话框返回的是一个字符串，要得到数据，需要进行转化处理
+
+
+
+字符串转数字
+Integer.parseInt(intString);//将字符串转化为int型数据
+Double.parseDouble(doubleString);将字符串转化为double型数据
+
+数字转字符串
+String.valueOf(变量名);
+
+进制转换
+Intege.toBinartString();
+将十进制数转换为二进制，返回结果String
+Integer.toOctalString(int i);
+将10进制数字转为8进制，返回结果String
+Intege.toHexString();
+将十进制数转换为十六进制，返回结果String
+
+
+long long_max=java.lang.Long.MAX_VALUE;//得到长整型的最大值。
+int int_max=java.lang.Integer.MAX_VALUE;//得到整型的最大值。
+short short_max=Short.MAX_VALUE;//得到短整型的最大值。
+byte byte_max=Byte.MAX_VALUE;//得到Byte型最大值。
+
+字符串相关方法
+length();//字符串长度
+toCharArray();//字符串转换为字符数组
+charAt();//从字符串中取出指定位置的字符
+getBytes();//字符串与byte数组的转换
+indexOf();//过滤字符串中存在的字符
+trim();//去掉字符串的前后空格
+subString();//从字符串中取出子字符串
+toLowerCase();toUpperCase();//大小写转换
+endsWith();startWith();//判断字符串的开头结尾字符
+replace();//替换String字符串中的一个字符
+String.valueOf();将数字转换为字符串
+字符串.equals(字符串)
+split(String regex);	//根据参数regex将原来的字符串分割为若干个字符串
+contains(CharSequence cs);	//判断字符串是否包含指定的字符序列
+isEmpty();	//当且仅当字符串长度为0时返回true
+
+
+StringBuffer类
+
+append(char c)	将参数添加到StringBuffer对象中
+insert(int offest, String str)	将字符串中的offset位置插入字符串str
+deleteCharAt(int index)		移除此序列指定位置的字符
+delete(int start, int end)	删除StringBuffer对象中指定范围的字符或字符串系列
+replace(int start, int end, String s)	在StringBuffer对象中替换指定的字符或字符串序列
+setCharAt(int index, char ch)	修改指定位置index处的字符序列
+toString()	返回StringBuffer缓冲区中的字符串
+reverse()	将此字符序列用其反转形式取代
+
+-------------------------------------
+
+Runtime类
+
+exec();		执行一个dos命令
+
+
+
+
+
+确认对话框
+JOptionPane.showConfirmDialog(null,"提示语句");
+yes返回JOptionPane.YES_OPTION(0);
+NO返回JOptionPane.NO_OPTION(1);
+Cancel返回JOptionPane.CANCEL_OPTION(2);
+
+数学类Math
+sin();
+cos();
+tan();
+asin();
+acos();
+atan();
+toRadians();//将角度转化成弧度
+toDegrees();//将弧度转换成角度
+
+指数类Math
+exp();//e的x次方
+log();//x的自然对数
+log10();//x以10为底的自然对数
+pow();//x的b次方
+sqrt();//x的平方根
+
+取整方法
+ceil();//double返回向上与x最接近的整数
+floor();//double返回向下与x最接近的整数
+rint();//double返回与x最接近的整数，如果两数距离一样，则取偶数
+
+其他方法
+min();
+max();
+abs();//绝对值
+random();//生成大于等于0.0小于1.0的double型随机数，经过加工可以生成任意范围的数
+
+RandomCharacter类
+getRandomlower();//随机生成小写字母
+
+java.util.Arrays.sort(数组名);//将数组中的元素按从小到大排列
+java.util.Arrays.sort(数组名,初始位置,末尾位置-1);
+例：
+java.util.Arrays.sort(listChars,2,5);// 从listChars[2]~listChars[5-1]排列
+
+java.util.Arrays.binarySearch(数组名,想查找的元素);//存在则返回其下标，不存在则返回插入点+1
+java.util.Arrays.equals(数组名,数组名);//比较的数组类型必须相同，两个数组的元素和元素所在的位置均相同时，
+				       //返回ture,否则返回flase
+java.util.Arrays.fill(数组名,填充的数字);//数组中的所有元素都变成填充的数字
+java.util.Arrays.fill(数组名,初始位置,末尾位置-1,填充的数字);//从初始位置到末尾位置-1全部变成填充的数字
+
+System.currentTimeMillis();//返回的是从1970年到现在的时间，以毫秒计数  millisecond
+getTime();//返回GMT1970年1月1日至今逝去的时间
+---------------------------------------------------------------------------------------
+java.util.Date date = new java.util.Date();
+		System.out.println(date);//返回当前的时间
+            或  System.out.println(date.toString());
+例如：
+     Fri     Feb    16    12:01:12    CST                2018
+    星期五   二月  16号     时间     中国的标准时间      年份
+----------------------------------------------------------------------------------------
+

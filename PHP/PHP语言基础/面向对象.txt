@@ -1,0 +1,58 @@
+构造方法
+	__construct(){	//__是两条下划线
+			
+	}
+
+析构方法
+	__destruct(){	//在对象被销毁时调用，PHP有垃圾回收机制，不用程序员管理内存
+			
+	}
+
+public $height;
+
+	__construct(){	//__是两条下划线
+		$this->height = $height;	
+	}
+
+关于::
+
+关键字::常量名/变量名/方法名	
+parent	调用父类的
+self	调用当前类中的静态成员和变量，在类内部调用静态成员时使用
+类名	调用本类的变量、常量和方法，在类外调用类内部的静态成员时使用
+
+定义类 class
+
+实例化用 new
+
+调用类的方法和属性用	->
+
+权限控制	public	private	protected
+
+
+
+魔术方法
+
+__get()
+__set()
+__call()
+__autoload()//自动加载类文件
+
+function __autoload($class_name){
+    $class_path = $class_name.'php';
+    if(file_exists($class_path)){
+	include_once($class_path);
+    }else{
+	echo '类路径错误';
+    }
+}
+
+
+分页类项目地址： https://github.com/jasongrimes/php-paginator
+include('paginator.php');//引入分页类
+分页类	Paginator(获取总数，每页显示条数，获取当前页码，拼接url)
+
+
+
+
+

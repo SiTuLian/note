@@ -1,0 +1,50 @@
+package edu.mowangxueyuan.fin;
+
+interface Inter{
+	public static final int NUMBER = 5;
+	public abstract void tell();
+}
+
+interface Inter1{
+	public abstract void say();
+}
+
+abstract class Test{
+	public abstract void prin();
+}
+
+class A extends Test implements Inter,Inter1{
+	public void tell() {
+		System.out.println(NUMBER);
+	}
+	public void say() {
+		System.out.println("接口可以多实现");
+	}
+	public void prin() {
+		System.out.println("一个类可以同时继承抽象类和实现多接口");
+	}
+}
+
+public class FinalTest01 {
+	
+	/*
+	 * 接口
+	 * 		接口是一个特殊的类，里面 全部都是 全局常量和公共的抽象方法所组成
+	 * 接口的格式
+	 * 		interface 类名{
+	 * 			全局常量
+	 * 			抽象方法
+	 * 		}
+	 * 接口的实现必须通过子类，使用关键字implements,而且接口可以多实现
+	 * 一个类可以同时继承抽象类和实现接口
+	 * 
+	 */
+
+	public static void main(String[] args) {
+		A a = new A();
+		a.tell();
+		a.say();
+		a.prin();
+	}
+
+}

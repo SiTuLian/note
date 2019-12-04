@@ -1,0 +1,32 @@
+mysqli_connect([string $host [, string $username [,string $password [,string $dbname [, int $post [, string $socket]]]]]])     连接mysql服务器
+	
+	host	 Mysql服务器
+	username 用户名
+	password 密码
+	dbname	 连接的数据库名称
+	post     服务器使用的端口号
+	socket   unox域火socket
+
+选择mysql数据库
+	mysqli_select_db(mysql $link, string $dbname)
+	
+	link     数据库返回的连接标识
+	dbname   选择的数据库
+
+执行SQL语句
+	mysqli_query(mysql $link,string $query [, int $resultmode])
+	link     数据库返回的连接标识
+	query	 要执行的SQL语句
+	resultmode    MYSQLI_STORE_RESULT  默认
+		      MYSQLI_USE_RESULT	  返回大量数据时调用
+		可能会发生错误  用  mysqli_free_result() 释放内存
+
+将结果集返回数组
+	mysqli_fetch_array(resource $result [, int $result_type])
+	
+	result	由mysqli_query()函数返回的数据指针
+	$result_type   返回的表示形式
+		MYSQLI_ASSOC-------返回关联数组，下标为字符串
+		MYSQLI_NUM---------返回索引数组，下标为数字
+		MYSQLI_BOTH--------默认值，返回同时包含关联数字索引的数组
+

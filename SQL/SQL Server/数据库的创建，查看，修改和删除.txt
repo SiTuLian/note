@@ -1,0 +1,33 @@
+
+------------------------------数据库的创建
+--选择数据库
+use master
+GO--从上一个GO到下一GO的脚本相互独立，互不影响，前一个计划执行错误，不影响下一个
+--创建数据库
+create database GoodsDB   --数据库名称
+--数据文件
+on
+(
+	--逻辑名称		--文件保存路径
+	name = mydb2_dat, filename = 'c:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\GoodsDB.mdf',
+	size = 10, maxsize = 50, filegrowth=2MB
+	
+)
+--日志文件
+log on 
+(
+	name = mydb2_log, filename = 'c:\Program Files\Microsoft SQL Server\MSSQL10_50.MSSQLSERVER\MSSQL\DATA\GoodsDB_log.ldf',
+	size = 5, maxsize = 50, filegrowth=2MB
+)
+
+-----------------------------------------------------------------------------
+
+--查看数据库信息
+	exec sp_helpdb 'GoodsDB'
+
+--修改数据库名称
+	alter database Temp_1DB modify name = Temp_2DB
+
+--删除数据库
+	drop database GoodsDB;
+

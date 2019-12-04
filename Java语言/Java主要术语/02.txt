@@ -1,0 +1,40 @@
+algorithm				算法
+assignment operator			赋值运算符
+assignment statement			赋值语句
+backslash				反斜杠
+byte type				字节型
+casting					类型转换
+char type				字符型
+constant				常量
+data type				数据类型
+debugger				调试器
+debugging				调试
+declaration				声明
+decrement operator			减量运算符
+double type				双精度浮点型
+encoding				编码
+final					终极修饰符
+float type				单精度浮点型
+floating-point number			浮点数
+expression				表达式
+expression statement			表达式语句
+identifier				标识符
+increment operator			增量运算符
+increment developmenrt and testing	增量开发和测试
+indentation				缩进
+int type				整型
+literal					直接量
+logic error				逻辑错误
+long type				长整型
+narrowing(of types)			缩窄类型
+operator				运算符
+primitive data type			基本数据类型
+runtime error				运行错误
+short type				短整形
+syntax error				语法错误
+supplementary Unicode			补充Unicode
+Unicode					统一码
+Unix epoch				Unix时间戳
+variable				变量
+widening(of types)			扩宽类型
+whitespace				空格

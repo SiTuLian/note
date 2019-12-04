@@ -1,0 +1,8 @@
+import java.io.File;
+
+File folder = new File("my new folder");
+
+filder.mkdir()//创建文件夹
+filder.mkdirs()//创建多级文件夹
+
+文件夹的重命名和删除的方法与文件的重命名和删除一样，但文件夹的删除，其文件夹必须为空

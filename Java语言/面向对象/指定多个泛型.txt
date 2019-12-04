@@ -1,0 +1,39 @@
+package edu.mowangxueyuan.fin;
+
+class Con2<K,T>{
+	private K x;
+	private T y;
+	
+	public K getX() {
+		return x;
+	}
+	public void setX(K x) {
+		this.x = x;
+	}
+	public T getY() {
+		return y;
+	}
+	public void setY(T y) {
+		this.y = y;
+	}
+	public void tell() {
+		System.out.println("name:"+getX()+"   age:"+getY());
+	}
+	
+}
+
+public class FinalTest04 {
+	
+	/*
+	 * 指定多个泛型
+	 * 		注意泛型标识与定义的数据类型的对应
+	 */
+
+	public static void main(String[] args) {
+		Con2<String,Integer> con2 = new Con2<String,Integer>();
+		con2.setX("天涯落风");
+		con2.setY(16);
+		con2.tell();
+	}
+
+}

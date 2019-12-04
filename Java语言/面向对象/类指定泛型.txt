@@ -1,0 +1,42 @@
+package edu.mowangxueyuan.fin;
+
+// 泛型的标识，不一定是T，可以是别的字母，但必须是大写。
+class Generic<T>{
+	private T x;
+	
+	public T getX() {
+		return x;
+	}
+	public void setX(T x) {
+		this.x = x;
+	}
+	public void tell() {
+		System.out.println(x);
+	}
+}
+
+public class FinalTest03 {
+	
+	/*
+	 * 类指定泛型
+	 * 		泛型可以解决数据类型的安全问题，是在类声明的时候通过一个标识表示
+	 * 		类中某个属性的类型或者是某个方法的返回值及参数类型。
+	 * 格式
+	 * 		访问权限	class	类名称<泛型，泛型……>{
+	 * 			属性
+	 * 			方法
+	 * 		}
+	 * 对象的创建
+	 * 			类名称<具体类型> = new 类名称<具体类型>();
+	 */
+
+	public static void main(String[] args) {
+		Generic<Integer> g = new Generic<Integer>();
+		g.setX(10);
+		g.tell();
+		Generic<String> f = new Generic<String>();
+		f.setX("泛型");
+		f.tell();
+	}
+
+}

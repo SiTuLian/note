@@ -1,0 +1,11 @@
+continue statement			continue语句
+infinite loop				死循环
+iteration				迭代
+labeled break statement			标号break语句
+labled continue statement		标号continue语句
+loop					循环
+loop-continuation-condition		循环继续条件
+loop body				循环体
+nested loop				嵌套循环
+off-by-one error			off-by-one错误
+sentinel value				标志值

@@ -1,0 +1,48 @@
+package edu.mowangxueyuan.randomSample;
+
+public class ClassArray01 {
+
+	/**
+	 * 复制数组
+	 */
+	public static void main(String[] args) {
+		int[] array = {1,2,3,4,5};
+		int[] arrayOne = {6,7,8,9,10};
+		
+		//第一种
+		//arrayOne = array;//实际上是将一个数组的引用复制给另一个变量，使两个变量指向同样的内存地址
+		for (int i = 0; i<array.length; ++i){
+			System.out.print(array[i]+"   ");
+		}
+		System.out.println();
+		for (int i = 0; i<arrayOne.length; ++i){
+			System.out.print(arrayOne[i]+"   ");
+		}
+		System.out.println();
+		//第二种
+		for (int i = 0; i<array.length; ++i){
+			arrayOne[i] = array[i];
+		}
+		
+		for (int i = 0; i<arrayOne.length; ++i){
+			System.out.print(arrayOne[i]+"   ");
+		}
+		System.out.println();
+		//第三种
+		int[] arrayTwo = new int[5];//开辟空间后，初始值都为0
+		System.arraycopy(arrayOne,0,arrayTwo,0,5);
+		
+		//System.arraycopy(被复制的数组，该数组的起始位置，目标数组，该数组的起始位置，复制的长度);
+		//必须先创建目标数组并为其开辟空间，
+		
+		for (int i = 0; i<arrayTwo.length; ++i){
+			System.out.print(arrayTwo[i]+"   ");
+		}
+	}
+}
+=============================================================================================================
+输出结果
+1   2   3   4   5   
+6   7   8   9   10   
+1   2   3   4   5   
+1   2   3   4   5 

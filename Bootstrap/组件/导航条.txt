@@ -1,0 +1,56 @@
+导航条
+navbar navbar-default
+container-fluid
+navbar-header
+
+
+品牌图标
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="...">
+      </a>
+    </div>
+  </div>
+</nav>
+
+导航条表单	.navbar-form
+
+按钮		.navbar-btn
+
+文本		.navbar-text
+<p class="navbar-text">Signed in as Mark Otto</p>
+把文本包裹在 .navbar-text中时，为了有正确的行距和颜色，通常使用 <p> 标签。
+
+非导航的链接	.navbar-link
+
+<p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>
+
+组件排列
+.navbar-left
+.navbar-right
+
+固定在顶部
+.navbar-fixed-top
+
+固定在底部
+.navbar-fixed-bottom
+
+静止在顶部
+.navbar-static-top
+
+反色的导航条
+.navbar-inverse 
+
+路径导航
+在一个带有层次的导航结构中标明当前页面的位置。
+
+各路径间的分隔符已经自动通过 CSS 的 :before 和 content 属性添加了。
+
+<ol class="breadcrumb">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Library</a></li>
+  <li class="active">Data</li>
+</ol>
+

@@ -1,0 +1,70 @@
+package edu.mwxy.javabasics;
+
+/*
+ * 多线程有种实现方法，一是继承Thread，二是实现Runnable接口
+ */
+
+//继承Thread类
+class MyThread extends Thread{
+	
+	
+	private String name;
+	public MyThread(String name){
+		this.name = name;
+	}
+	
+	//重写run方法
+	public void run() {
+		for (int i = 0; i < 1000; i++) {
+			System.out.println(name+":"+i);
+		}
+		super.run();
+	}
+}
+
+//实现Runnable接口
+class MyRunnable implements Runnable{
+	
+	private String name;
+	public MyRunnable(String name){
+		this.name = name;
+	}
+	
+	public void run() {
+		for (int i = 0; i < 1000; i++) {
+			System.out.println(name+":"+i);
+		}
+	}
+}
+
+public class ThreadDemo01 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		
+		MyThread t1 = new MyThread("A");
+		MyThread t2 = new MyThread("B");
+		
+		/*
+		 * t1.run();
+		 * t2.run();
+		 * 调用方法是没用的，要开启线程
+		 */
+		
+//		start()开启线程
+		t1.start();
+		t2.start();
+		
+		MyRunnable r1 = new MyRunnable("C");
+		MyRunnable r2 = new MyRunnable("D");
+		Thread t3 = new Thread(r1);
+		Thread t4 = new Thread(r2);
+		t3.start();
+		t4.start();
+		
+	}
+
+}

@@ -1,0 +1,31 @@
+accesor method(getter)			访问器或读取器方法
+class					类
+class abstraction			类抽象
+class encapsulation			类封装
+class's contract			类的合约
+composition				组合
+constant				常量
+constructor				构造方法
+data field encapsulation		数据域封装
+default constructor			默认构造方法
+dot operator(.)				点运算符
+immutable class				不可变类
+instance				实例
+instance method				实例方法
+instance variable			实例变量
+instantiation				实例化
+mutator method(setter)			修改器或设置器方法
+
+null					空
+no-arg- constructor			无参构造方法
+object-oriented programming		面向对象程序设计
+Unified Modeling Language		统一建模语言
+package-privatr(or package-access)	包私有或包访问
+private					私有的
+public					公用的
+reference variable			引用变量
+reference type				引用类型
+stack					栈
+static method				静态方法
+static variable				静态变量
+this keyword				关键字this

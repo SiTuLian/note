@@ -1,0 +1,38 @@
+.class file                             .class文件
+,java file				.java文件
+assembly language			汇编语言
+binary numbers				二进制数
+bit					位
+block					块
+byte					字节
+bytecode				字节码
+bytecode verifier			字节码验证
+cable modem				电缆调制解调器
+central processing unit			中央处理器
+class loader				类加速器	
+comment					注释
+compiler				编译器
+dot pitch				点距
+digital subscriber line			数字用户线
+hardware				硬件
+hexadecimal numbers			十六进制数
+high-level language			高级语言
+Integrated Development Environment	集成开发环境
+java command				运行命令java
+javac command				编译命令javac
+java Development			Java开发工具箱
+java Virtual Machine			Java虚拟机
+keyword					关键字或保留字
+machine language			机器语言
+main method				main方法
+memory					内存
+modem					调制解调器
+network interface card			网卡
+operating system			操作系统
+pixel					像素
+resolution				分辨率
+software				软件
+source code/program			源代码/源程序
+storce file				源程序文件
+storage devices				存储设备
+statement				语句

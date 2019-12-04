@@ -1,0 +1,176 @@
+package edu.mowangxueyuan.ScientificComputer;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+class Calculator{
+	private String strNumber = "0";
+	private String sign = "0";
+	private int blankCount = 0;
+	String str;
+	char[] ch;
+	char[] chNumber;
+	char[] chSign;
+	String[] array;
+	double[] num;
+	int j = 0;
+	
+	public void inputString() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("«Î ‰»Î Ω◊”");
+		str = scanner.next();
+		ch = str.toCharArray();
+	}
+	public void judge() {
+		if (ch[0] == '-') {
+			
+			String zero = "0";
+			str = zero + str;
+			ch = str.toCharArray();
+		}
+	}
+	public void segmentation() {
+		for (int i = 0; i<ch.length; ++i) {
+			if ( (ch[i]>= 48 && ch[i]<= 57 ) || ( ch[i] == '.' ) ) {
+				
+				strNumber += ch[i];
+			}
+			else {
+				sign += ch[i];
+				strNumber += " ";
+			}
+		}
+	}
+	public void mobile() {
+		strNumber = strNumber.substring(1);
+		sign = sign.substring(1);
+	}
+	public void shift() {
+		chNumber = strNumber.toCharArray();
+		chSign = sign.toCharArray();
+	}
+	public void count() {
+		for (int i = 0; i<chNumber.length; ++i) {
+			if (chNumber[i] == ' ') {
+				++blankCount;
+			}
+		}
+	}
+	public void StringArray() {
+		array = new String[blankCount + 1];
+		num = new double[blankCount + 1];
+		for (int i = 0; i<array.length; ++i) {
+			array[i] = "0";
+		}
+	}
+	public void storageStringArray() {
+		for (int i = 0; i<chNumber.length; ++i) {
+			if (chNumber[i] == ' ') {
+				++j;
+				++i;
+			}
+			array[j] += chNumber[i];
+		}
+	}
+	public void newMobile() {
+		for (int i = 0; i<array.length; ++i) {
+			array[i] = array[i].substring(1);
+		}
+	}
+	public void shiftDouble() {
+		for (int i = 0; i<array.length; ++i) {
+			num[i] = Double.parseDouble(array[i]);
+		}
+	}
+	public void core() {
+		for (int k = 0; k<chSign.length; ++k) {
+			
+			if(chSign[k] == '*') {
+				num[k] = num[k] * num[k+1];
+				
+				tell(num,k);
+				num = Arrays.copyOf(num, num.length-1);
+				say(chSign,k);
+				chSign = Arrays.copyOf(chSign, chSign.length-1);
+				--k;
+				
+			}
+			else if(chSign[k] == '/') {
+				num[k] = num[k] / num[k+1];
+				
+				tell(num,k);
+				num = Arrays.copyOf(num, num.length-1);
+				say(chSign,k);
+				chSign = Arrays.copyOf(chSign, chSign.length-1);
+				--k;
+				
+			}
+			
+			
+		}
+		
+		for (int k = 0; k<chSign.length; ++k) {
+			
+			if(chSign[k] == '+') {
+				num[k] = num[k] + num[k+1];
+				
+				tell(num,k);
+				num = Arrays.copyOf(num, num.length-1);
+				say(chSign,k);
+				chSign = Arrays.copyOf(chSign, chSign.length-1);
+				--k;
+				
+			}
+			else if(chSign[k] == '-') {
+				num[k] = num[k] - num[k+1];
+				
+				tell(num,k);
+				num = Arrays.copyOf(num, num.length-1);
+				say(chSign,k);
+				chSign = Arrays.copyOf(chSign, chSign.length-1);
+				--k;
+				
+			}	
+		}
+	}
+	public void tell(double[] arr, int b) {
+		
+		for (int i = b+1; i<arr.length-1; ++i) {
+			arr[i] = arr[i+1];
+			
+		}
+		
+	}
+	public void say(char[] ch, int a) {
+		
+		for (int i = a; i<ch.length-1; ++i) {
+			ch[i] = ch[i+1];
+		}
+		
+	}
+}
+
+public class ScientificCalculator01 {
+
+	public static void main(String[] args) {
+		
+		Calculator cal = new Calculator();
+		cal.inputString();
+		cal.judge();
+		cal.segmentation();
+		cal.mobile();
+		cal.shift();
+		cal.count();
+		cal.StringArray();
+		cal.storageStringArray();
+		cal.newMobile();
+		cal.shiftDouble();
+		cal.core();
+		System.out.println(cal.num[0]);
+		
+		
+		
+		
+	}
+	
+}

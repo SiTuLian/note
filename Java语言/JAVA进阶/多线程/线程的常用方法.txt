@@ -1,0 +1,11 @@
+线程的常用方法一般都在Thread类中
+
+Thread.getName()	获得线程名
+Thread.currentThread()	获得当前线程对象
+Thread.isAlive()	判断线程是否启动
+Thread.join()		线程的强行运行
+Thread.sleep()		线程的休眠
+Thread.yield()		线程的礼让
+
+//慎用，容易引起死锁
+Thread.stop()		线程的销毁

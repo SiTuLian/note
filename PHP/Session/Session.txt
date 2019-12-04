@@ -1,0 +1,46 @@
+启动会话
+
+session_start();
+session_id();//会话创建的id
+
+存储会话
+
+$_SESSION['username'] = '张三';
+
+
+if(!empty($_SESSION['username'])){    //判断用于储存用户名的会话变量是否为空
+    $userName = $_SESSION['username'];//读取会话
+}
+
+删除会话
+
+$_SESSION = array();
+
+session_destroy();//结束当前会话，并清空会话的所有资源
+
+
+
+session临时文件
+
+$path = './tmp/';
+session_save_path($path);//保存临时文件，该函数必须在session_strat()之前
+session_strat();
+$_SESSION['username'] = 'mr';
+
+
+Session缓存
+
+session_cache_limiter();//参数为private或public    实现Session缓存
+
+session_cache_expire($number);//设置缓存时间，单位为分
+
+这两个函数都必须在session_start();之前调用
+
+
+
+
+Session数据库储存
+
+session_set_save_handler();
+
+

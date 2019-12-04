@@ -1,0 +1,71 @@
+简介：
+	栅格系统用于通过一系列的行（row）与列（column）的组合来创建页面布局
+
+“行（row）”必须包含在 .container （固定宽度）或 .container-fluid （100% 宽度）中，以便为其赋予合适的排列（aligment）和内补（padding）。
+
+通过“行（row）”在水平方向创建一组“列（column）”。
+
+内容应当放置于“列（column）”内，并且，只有“列（column）”可以作为行（row）”的直接子元素。
+
+类似 .row 和 .col-xs-4 这种预定义的类，可以用来快速创建栅格布局。Bootstrap 源码中定义的 mixin 也可以用来创建语义化的布局。
+
+通过为“列（column）”设置 padding 属性，从而创建列与列之间的间隔（gutter）。通过为 .row 元素设置负值 margin 从而抵消掉为 .container 元素设置的 padding，也就间接为“行（row）”所包含的“列（column）”抵消掉了padding。
+
+如果一“行（row）”中包含了的“列（column）”大于 12，多余的“列（column）”所在的元素将被作为一个整体另起一行排列。
+
+媒体查询
+	xs--------手机，超小屏幕<768px
+	sm--------平板，小屏幕>=768px
+	md--------桌面显示器，中等屏幕>=992px
+	lg--------大桌面显示器，大屏幕>=1200px
+
+栅格系统行为：总是水平排列	开始是堆叠在一起的，当大于这些阈值时将变为水平排列C
+
+所有“列（column）必须放在 ” .row 内
+
+.col-md-*   *为1~12的整数，代表横跨多少列
+	    md----代表中等屏幕
+
+流式布局容器
+将最外面的布局元素 .container 修改为 .container-fluid，就可以将固定宽度的栅格布局转换为 100% 宽度的布局。
+
+如果在一个 .row 内包含的列（column）大于12个，包含多余列（column）的元素将作为一个整体单元被另起一行排列。
+
+响应式列重置
+	.clearfix//清除浮动
+	.visible-xs-*//xs 可见   其他隐藏
+	.hidden-xs//xs 隐藏      其他可见
+
+.visible-xs-*	*为block，inline，inline-block
+
+列偏移
+
+.col-md-offset-* 类可以将列向右侧偏移。这些类实际是通过使用 * 选择器为当前元素增加了左侧的边距（margin）
+.col-md-offset-4 类将 .col-md-4 元素向右侧偏移了4个列（column）的宽度。
+
+嵌套列
+<div class="row">
+  <div class="col-sm-9">
+    Level 1: .col-sm-9
+    <div class="row">
+      <div class="col-xs-8 col-sm-6">
+        Level 2: .col-xs-8 .col-sm-6
+      </div>
+      <div class="col-xs-4 col-sm-6">
+        Level 2: .col-xs-4 .col-sm-6
+      </div>
+    </div>
+  </div>
+</div>
+
+列排序
+通过使用 .col-md-push-* 和 .col-md-pull-* 类就可以很容易的改变列（column）的顺序。
+
+pull-------向左
+push-------向右
+
+
+	
+
+
+

@@ -1,0 +1,57 @@
+
+public class Class05 {
+
+	/**
+	 * 二维数组的声明与创建及锯齿数组
+	 */
+	public static void main(String[] args) {
+		int[][] martix = new int[5][5];//声明与创建
+		int[][] martix1 = {
+				           {1,2,3,4,5},
+				           {2,2,2,2,2},
+				           {3,2,2,2,2},
+				           {4,2,2,2,2},
+				           {5,2,2,2,2}
+				          };
+		
+		//输出
+		for (int i = 0; i<martix.length; ++i){
+			for (int j = 0; j<martix[i].length; ++j){
+				System.out.print(martix[i][j]+"   ");
+			}
+			System.out.println();
+		}
+		
+		System.out.println();
+		
+		//锯齿数组
+		int[][] sawtoothArray = {
+									{1},
+									{1,2},
+									{1,2,3},
+									{1,2,3,4},
+									{1,2,3,4,5}
+								};
+		
+		for (int i = 0; i<sawtoothArray.length; ++i){
+			for (int j = 0; j<sawtoothArray[i].length; ++j){
+				System.out.print(sawtoothArray[i][j]+"   ");
+			}
+			System.out.println();
+		}
+	}
+}
+=========================================================================================
+输出结果
+0   0   0   0   0   
+0   0   0   0   0   
+0   0   0   0   0   
+0   0   0   0   0   
+0   0   0   0   0   
+
+1   
+1   2   
+1   2   3   
+1   2   3   4   
+1   2   3   4   5 
+---------------------------------------------------------------------------

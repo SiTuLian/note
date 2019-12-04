@@ -1,0 +1,27 @@
+package edu.mowangxueyuan.array;
+
+public class ArrayFind {
+
+	/**
+	 * 线性查找法
+	 */
+	public static void main(String[] args) {
+		int[] array = {3,14,-3,24,-1};
+		System.out.println(find(array, 5));
+		System.out.println(find(array, 3));
+		
+	}
+	//如果查找得到返回其所在的位置，也就是下标，否则返回-1
+	public static int find(int[] a, int key){
+		for (int i = 0; i<a.length; ++i){
+			if (key == a[i]){
+				return i;
+			}
+		}
+		return -1;
+	}
+}
+===========================================================================
+输出结果
+-1
+0

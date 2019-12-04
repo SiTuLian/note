@@ -1,0 +1,46 @@
+package edu.mowangxueyuan.test;
+
+class TestFirst{
+	private String name;
+	
+	//构造方法
+	public TestFirst(String name) {
+		this();// 调用构造方法 这个语句要放在最前面
+		this.name = name;//表示类中的属性
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public TestFirst() {
+		System.out.println("hello world");
+	}
+	
+	
+	public void tell() {
+		System.out.println(getName()+"\n"+this);//表示当前对象
+	}
+}
+
+public class ExtendsTest05 {
+	
+	/*
+	 *  this 关键字 的用法
+	 *  
+	 *  表示类中的属性和调用方法
+	 *  调用本类中的构造方法
+	 *  表示当前对象
+	 */
+
+	public static void main(String[] args) {
+		TestFirst t = new TestFirst("张三");
+		t.setName("李四");
+		t.tell();
+		
+	}
+
+}

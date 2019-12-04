@@ -1,0 +1,123 @@
+标题
+HTML 中的所有标题标签，<h1> 到 <h6> 均可使用。另外，还提供了 .h1 到 .h6 类，为的是给内联（inline）属性的文本赋予标题的样式。
+
+在标题内还可以包含 <small> 标签或赋予 .small 类的元素，可以用来标记副标题。
+
+页面主体
+Bootstrap 将全局 font-size 设置为 14px，line-height 设置为 1.428。这些属性直接赋予 <body> 元素和所有段落元素。另外，<p> （段落）元素还被设置了等于 1/2 行高（即 10px）的底部外边距（margin）。
+
+中心内容
+.lead 类可以让段落突出显示。
+
+内联文本元素
+
+<mark>
+
+<del>
+
+<s>
+
+ins>
+
+<u>
+
+小号文本
+对于不需要强调的inline或block类型的文本，使用 <small> 标签包裹，其内的文本将被设置为父容器字体大小的 85%。标题元素中嵌套的 <small> 元素被设置不同的 font-size 。
+
+你还可以为行内元素赋予 .small 类以代替任何 <small> 元素。
+
+<strong>
+
+<em>
+
+<b> 用于高亮单词或短语，不带有任何着重的意味；
+<i> 标签主要用于发言、技术词汇等。
+
+对齐
+
+text-left
+text-center
+text-right
+text-justify
+text-nowrap
+
+改变大小写
+
+text-lowercase//全部变为小写
+text-uppercase//全部变为大写
+text-capitalize//单词首字母变为大写
+
+缩略语
+当鼠标悬停在缩写和缩写词上时就会显示完整内容，Bootstrap 实现了对 HTML 的 <abbr> 元素的增强样式。缩略语元素带有 title 属性，外观表现为带有较浅的虚线框，鼠标移至上面时会变成带有“问号”的指针。如想看完整的内容可把鼠标悬停在缩略语上（对使用辅助技术的用户也可见）, 但需要包含 title 属性。
+
+基本缩略语
+<abbr title="attribute">attr</abbr>
+
+首字母缩略语
+为缩略语添加 .initialism 类，可以让 font-size 变得稍微小些。
+<abbr title="HyperText Markup Language" class="initialism">HTML</abbr>
+
+地址
+让联系信息以最接近日常使用的格式呈现。在每行结尾添加 <br> 可以保留需要的样式。
+<address>
+  <strong>Twitter, Inc.</strong><br>
+  1355 Market Street, Suite 900<br>
+  San Francisco, CA 94103<br>
+  <abbr title="Phone">P:</abbr> (123) 456-7890
+</address>
+
+
+引用
+在你的文档中引用其他来源的内容。
+
+默认样式的引用
+将任何 HTML 元素包裹在 <blockquote> 中即可表现为引用样式。对于直接引用，我们建议用 <p> 标签。
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+</blockquote>
+
+
+多种引用样式
+对于标准样式的 <blockquote>，可以通过几个简单的变体就能改变风格和内容。
+
+命名来源
+添加 <footer> 用于标明引用来源。来源的名称可以包裹进 <cite>标签中。
+
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+</blockquote>
+
+另一种展示风格
+通过赋予 .blockquote-reverse 类可以让引用呈现内容右对齐的效果。
+
+<blockquote class="blockquote-reverse">
+  ...
+</blockquote>
+
+
+列表
+
+<ul>	无序列表
+<ol>	有序列表
+
+无样式列表 .list-unstyled    //移除list-style样式
+内联列表   .list-inline	  //display: inline-block;
+
+描述
+<dl>
+  <dt>...</dt>
+  <dd>...</dd>
+</dl>
+
+水平排列的描述
+.dl-horizontal 可以让 <dl> 内的短语及其描述排在一行。开始是像 <dl> 的默认样式堆叠在一起，随着导航条逐渐展开而排列在一行。
+
+<dl class="dl-horizontal">
+  <dt>...</dt>
+  <dd>...</dd>
+</dl>
+
+自动截断
+通过 text-overflow 属性，水平排列的描述列表将会截断左侧太长的短语。在较窄的视口（viewport）内，列表将变为默认堆叠排列的布局方式。
+

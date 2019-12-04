@@ -1,0 +1,12 @@
+anonymous array				匿名数组
+array					数组
+array initializer			数组初始化
+binary search				二分查找法
+garbage collection			垃圾回收
+index					下标
+index variable				下标变量
+insertion sort				插入排序
+linear search				线性查找
+multidimensional array			多维数组
+ragged array				锯齿数组
+selection sort				选择排序

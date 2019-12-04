@@ -1,0 +1,187 @@
+打开文件    fopen(string $fliename, string $mode);
+	$fliename  包含路径的文件名
+	$mode	   模式
+		r	只读
+		r+	读
+		w	只写
+		w+	写
+		x	谨慎写
+		x+	谨慎读/写
+		a	追加
+		a+	追加，读写
+		b	二进制文件
+
+关闭文件    fclose(resource handle);
+
+	$f_open = fopen("../file.txt","rb");
+	fclose($f_open);
+
+
+从文件中读取数据
+
+readfile(string $filename);//不需要打开/关闭文件，不需要echo/print等输出语句，直接写出文件路径即可
+
+array file(string $filename [,int $flags = 0]);//返回数组，内容包括换行符
+	$flags = FILE_USE_INCLUDE_PATH    在include_path中查找文件
+		 FILE_IGNORE_NEW_LINES    在数组每个元素的末尾不要添加换行符
+		 FILE_SKIP_EMPTY_LINES    跳过空行
+
+file_get_contents(string $filename [, offset [,maxlen]]);
+
+读取一行数据
+
+fgets(resource $handle [, int $length]);
+
+	$handle 被打开的文件
+	$length 指定一行并返回长度最大值为length-1个字节的字符串
+
+fgetss(resource $handle [, int $length [, string $allow_tags]]);//读取一行，并过滤HTML标签
+	$allow_tags    指定哪些标签不被过滤
+
+判断指针是否到了文件结束的位置    feof($fopen)
+
+
+读取一个字符
+
+fgetc(resource $handle);//由于读取的是1个字节，而UTF-8编码格式是3个字节，所以读取中文会是乱码
+
+读取任意长度的字符串
+
+fread(resource $handle, int $length);
+
+
+将数据写入文件
+
+fwrite(resource $handle string $string [, int $length]);
+	
+file_put_contents();
+
+
+操作文件
+
+copy(string path1, string path2);//将文件从path1复制到path2
+rename(string filename1, string filename2);//将filename1重命名为filename2
+unlink(string filename); 删除文件
+fileatime(string filename);//返回文件最后一次被访问的时间，时间以UNIX时间戳的方式返回
+filesize(string filename);//取得文件filename的大小
+pathinfo(string name [, int options]);//包含文件名name的路径信息
+string realpath(string filename);//返回文件filename的绝对路径
+stat(string filename);//返回一个数组，包含文件的相关信息，如文件大小，最后修改的时间等
+
+
+
+
+
+	目录处理
+
+打开目录
+opendir(string $path);
+判断是否是一个目录
+is_dir($dir)
+关闭目录
+closedir(resour $dir_handle);
+
+浏览目录
+scandir($path);//返回一个数组，包含该目录下的所有目录及文件
+
+mkdir(string $pathname);//新建一个指定的目录
+rmdir(dirname);//删除所指定的目录，该目录必须是空的
+getcwd(void);//获得当前工作的目录
+chdir(string directory);//改变当前目录为directory
+disk_free_space(string directory);//返回目录的总空间大小
+readdir(resource handle);//返回目录中下一个文件的文件名，使用此函数时必须是使用opendir()函数打开的
+rewinddir(resource handle);//将指定的目录重新指定到目录的开头
+
+
+
+	上传文件
+
+预定义变量
+
+$_FILES[filename][name]//储存上传文件的文件名
+$_FILES[FILENAME][size]//储存了文件大小，单位为字节
+$_FILES[FILENAME][tmp_name]//文件上传时，首先在临时目录中被保存成一个临时文件，该变量为临时文件名
+$_FILES[FILENAME][type]//上传文件的类型
+$_FILES[FILENAME][error]//储存了上传文件的结果，如果返回0，则说明文件上传成功
+
+$_FILES[FILENAME][error] 参数值
+
+错误代码	错误常量		描述
+0		UPLOAD_ERR_OK		成功
+1		UPLOAD_ERR_INI_SIZE	上传的文件超过php.ini中upload_max_filesize选择限制的值
+2		UPLOAD_ERR_FORM_SIZE	上传的文件大小超过HTML表单中MAX_FILE_SIZE选项指定的值
+3		UPLOAD_ERR_PARTIAL	文件只有部分被上传
+4		UPLOAD_ERR_NO_FILE	文件没有上传
+6		UPLOAD_ERR_NO_TMP_DIR	找不到临时文件夹
+7		UPLOAD_ERR_CANT_WRITE	文件写入失败
+
+
+文件上传函数
+move_uploaded_file(string $filename, string $destination);
+	$filename    上传文件的临时文件名
+	$destination 上传后保存的新的路径和名称
+
+
+		
+$_FILES['upfile'];//接收上传文件 upfile <input type='file' name='upfile'>
+
+//文件上传要为<from>设置属性 enctype='multipart/from-data'
+
+
+文件下载
+
+
+$filename = $_GET['filename']
+
+header('content-disposition:attachment;filename='.basename($filename));
+
+header('content-length:'.filesize($filename));
+
+readfile($filename);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

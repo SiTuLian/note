@@ -1,0 +1,31 @@
+引入包
+import java.io.File;
+
+File file = new File("hello.txt");//在下级目录
+File file = new File("bin/hello.txt");//指定目录
+File file = new File("../hello.txt");//上级目录
+File file = new File("../../hello.txt");//上上级目录
+
+//文件是否存在
+if (file.exists()){
+	System.out.println(file.isFile());
+	System.out.println(file.isDirectory());
+}else {
+	System.out.println("文件不存在");
+	try {
+		file.createNewFile();//创建文件
+
+		file.delete();//删除文件
+
+		//重命名
+		File nameto = new File("new hello.txt");
+		file.renameTo(nameto);//重命名
+
+		//在同个分区移动文件
+		File nameto = new File("src/new hello.txt");
+
+		System.out.println("文件已经创建成功");
+	}catch(IOException e){
+		System.out.println("文件无法创建");
+	}
+}
